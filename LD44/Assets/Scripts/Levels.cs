@@ -13,13 +13,13 @@ public class Levels : MonoSingleton<Levels> {
     public Level wild;
 
     public void goTo(LevelType type) {
-        bool toBunker = type == LevelType.Bunker;
-        bunker.gameObject.SetActive(toBunker);
-        wild.gameObject.SetActive(!toBunker);
-
-        if (type == LevelType.Bunker)
-            bunker.player.transform.position = bunker.spawnPoint.position;
-        else 
-            wild.player.transform.position = wild.spawnPoint.position;
+        if (type == LevelType.Wild && GameLogic.instance.stage == 3) {
+            GameLogic.instance.end.SetActive(true);
+        }
+        else {
+            bool toBunker = type == LevelType.Bunker;
+            bunker.gameObject.SetActive(toBunker);
+            wild.gameObject.SetActive(!toBunker);
+        }
     }
 }
