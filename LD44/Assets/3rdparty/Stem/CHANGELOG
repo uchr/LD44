@@ -1,0 +1,17 @@
+v1.0.4
+
+- UI: fixed inability to set a sound bus from the drop-down list in sound bank inspector
+
+v1.0.3
+
+- Build: fixed crash due to attempt to save all assets including internal ones
+
+v1.0.2
+
+- Persistent: added default bus property to SoundBus class
+- UI: fixed sounds not resetting the bus to default once the target bus was removed
+
+v1.0.1
+
+- Persistent: fixed crash caused by wrong sound bus polyphony default value
+- Runtime: fixed music player shuffle
