@@ -15,7 +15,7 @@ public class Levels : MonoSingleton<Levels> {
     public void goTo(LevelType type) {
         bool toBunker = type == LevelType.Bunker;
         bunker.gameObject.SetActive(toBunker);
-        wild.gameObject.SetActive(toBunker);
+        wild.gameObject.SetActive(!toBunker);
 
         if (type == LevelType.Bunker)
             Player.instance.transform.position = bunker.spawnPoint.position;
