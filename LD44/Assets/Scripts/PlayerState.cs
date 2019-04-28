@@ -32,7 +32,7 @@ public class PlayerState : MonoSingleton<PlayerState> {
             balloon = BunkerState.items["OxygenBalloon"];
 
         if (prevBallon != balloon) {
-            maxOxygen = 100.0f + balloon * 50.0f;
+            maxOxygen = 100.0f + balloon * 100.0f;
             oxygenBar.GetComponent<RectTransform>().sizeDelta = new Vector2 (maxOxygen * 2, oxygenBar.GetComponent<RectTransform>().rect.height);
         }
 
