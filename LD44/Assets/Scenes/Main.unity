@@ -2773,8 +2773,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 292902040}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 3.7699966, y: 13.037109, z: 0.7800001}
-  m_LocalScale: {x: 0.70199996, y: 0.70200044, z: 0.70200044}
+  m_LocalPosition: {x: 3.7699966, y: 0.1, z: 0.7800001}
+  m_LocalScale: {x: 0.7020003, y: 0.7020003, z: 0.7020003}
   m_Children: []
   m_Father: {fileID: 1741010660}
   m_RootOrder: 6
@@ -3287,6 +3287,11 @@ PrefabInstance:
       propertyPath: portal
       value: 
       objectReference: {fileID: 113464021}
+    - target: {fileID: 7233312425636074700, guid: a4047edf6d4fb5a4daea2d714ea1c65e,
+        type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7233312425911744565, guid: a4047edf6d4fb5a4daea2d714ea1c65e,
         type: 3}
       propertyPath: m_BackGroundColor.r
@@ -4550,8 +4555,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 434846160}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 3.7699966, y: 13.037109, z: 0.7800001}
-  m_LocalScale: {x: 0.702, y: 0.70200026, z: 0.70200026}
+  m_LocalPosition: {x: 3.7699966, y: 0.1, z: 0.7800001}
+  m_LocalScale: {x: 0.7020003, y: 0.7020003, z: 0.7020003}
   m_Children: []
   m_Father: {fileID: 1137566453}
   m_RootOrder: 6
@@ -5241,7 +5246,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 477042551}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -3.24, y: -0, z: 0.6}
+  m_LocalPosition: {x: -3.24, y: 0.1, z: 0.6}
   m_LocalScale: {x: 0.5522386, y: 0.5522386, z: 0.5522386}
   m_Children: []
   m_Father: {fileID: 1184842606}
@@ -6493,8 +6498,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 556178701}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 3.77, y: 13.037109, z: 0.78}
-  m_LocalScale: {x: 0.70199996, y: 0.70200044, z: 0.70200044}
+  m_LocalPosition: {x: 3.77, y: 0.1, z: 0.78}
+  m_LocalScale: {x: 0.7020003, y: 0.7020003, z: 0.7020003}
   m_Children: []
   m_Father: {fileID: 2054463687}
   m_RootOrder: 6
@@ -10617,6 +10622,11 @@ PrefabInstance:
       propertyPath: portal
       value: 
       objectReference: {fileID: 487371180}
+    - target: {fileID: 7233312425636074700, guid: a4047edf6d4fb5a4daea2d714ea1c65e,
+        type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7233312425911744565, guid: a4047edf6d4fb5a4daea2d714ea1c65e,
         type: 3}
       propertyPath: m_BackGroundColor.r
@@ -15467,7 +15477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8a09dac1114e1409b1c7b00573e3fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 5
 --- !u!136 &1573043700
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -19117,6 +19127,11 @@ PrefabInstance:
       propertyPath: portal
       value: 
       objectReference: {fileID: 282207264}
+    - target: {fileID: 7233312425636074700, guid: a4047edf6d4fb5a4daea2d714ea1c65e,
+        type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7233312425911744565, guid: a4047edf6d4fb5a4daea2d714ea1c65e,
         type: 3}
       propertyPath: m_BackGroundColor.r
@@ -21175,6 +21190,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7233312425636074700, guid: a4047edf6d4fb5a4daea2d714ea1c65e,
+        type: 3}
+      propertyPath: speed
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7233312424954372788, guid: a4047edf6d4fb5a4daea2d714ea1c65e,
         type: 3}
