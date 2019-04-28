@@ -3,25 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Wild : MonoBehaviour {
-    public GameObject[] stage0;
-    public GameObject[] stage1;
-    public GameObject[] stage2;
+    public GameObject[] stages;
     
-    public List<GameObject[]> items = new List<GameObject[]>();
+    public List<List<GameObject>> items = new List<List<GameObject>>();
 
     private void Awake() {
-        items.Add(stage0);
-        items.Add(stage1);
-        items.Add(stage2);
+        for (int i = 0; i < stages.Length; ++i) {
+            List<GameObject> stageItems = new List<GameObject>();
+            foreach (var item in stages[i].GetComponentsInChildren<Item>()) {
+                stageItems.Add(item.gameObject);
+                item.gameObject.SetActive(false);
+            }
+            items.Add(stageItems);
+        }
     }
 
     private void OnEnable() {
-        int stage = GameLogic.instance.stage;
-        foreach (var go in items[stage])
-            go.SetActive(true);
+        if (GameState.stage < items.Count) {
+            foreach (var go in items[ GameState.stage])
+                if (go != null)
+                    go.SetActive(true);
+        }
     }
 
     private void OnDisable() {
-        GameLogic.instance.stage++;
+        if (GameState.stage < items.Count) {
+            foreach (var go in items[GameState.stage])
+                if (go != null)
+                    go.SetActive(false);
+        }
     }
 }
