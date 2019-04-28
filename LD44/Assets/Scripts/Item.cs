@@ -15,6 +15,6 @@ public class Item : MonoBehaviour {
 
     private void Awake() {
         GetComponent<Trigger>().enter.AddListener(Enter);
-        GetComponentInChildren<TextMeshPro>().text = gameObject.name;
+        //GetComponentInChildren<TextMeshPro>().text = gameObject.name;
     }
 }
