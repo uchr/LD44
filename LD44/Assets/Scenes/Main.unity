@@ -10110,7 +10110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e87c7434987232d4ca7deae1a523ed7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  color: {r: 1, g: 0.977661, b: 0, a: 0.3372549}
 --- !u!4 &1041386321 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8106454802842674582, guid: 25f20dd060300ac47b0f143856de2004,
@@ -11737,7 +11737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e87c7434987232d4ca7deae1a523ed7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 1, g: 0.015686274, b: 0.2020174, a: 1}
+  color: {r: 1, g: 0.015686274, b: 0.2020174, a: 0.3137255}
 --- !u!135 &1217381277
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -12679,7 +12679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e87c7434987232d4ca7deae1a523ed7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  color: {r: 1, g: 0.977661, b: 0, a: 0.3372549}
 --- !u!4 &1315691511 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8106454802842674582, guid: 25f20dd060300ac47b0f143856de2004,
@@ -16251,7 +16251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e87c7434987232d4ca7deae1a523ed7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 1, g: 0.015686274, b: 0.2020174, a: 1}
+  color: {r: 1, g: 0.015686274, b: 0.2020174, a: 0.3137255}
 --- !u!114 &1741363325
 MonoBehaviour:
   m_ObjectHideFlags: 0
