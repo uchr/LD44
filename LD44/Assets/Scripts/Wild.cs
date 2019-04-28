@@ -24,6 +24,8 @@ public class Wild : MonoBehaviour {
                 if (go != null)
                     go.SetActive(true);
         }
+
+        PlayerState.instance.inTheWild = true;
     }
 
     private void OnDisable() {
@@ -32,5 +34,7 @@ public class Wild : MonoBehaviour {
                 if (go != null)
                     go.SetActive(false);
         }
+
+        PlayerState.instance.inTheWild = false;
     }
 }

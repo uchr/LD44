@@ -8,10 +8,17 @@ public static class BunkerState {
 }
 
 public class Bunker : MonoBehaviour {
-    /*private void OnEnable() {
-        listOfItems.text = "";
+    public bool isHome = false;
+
+    private void OnEnable() {
+        PlayerState.instance.inHome = true;
+        /*listOfItems.text = "";
         foreach (var item in BunkerState.items) {
             listOfItems.text += "<b>" + item.Key + "</b> " + item.Value.ToString() + "\n";
-        }
-    }*/
+        }*/
+    }
+
+    private void OnDisable() {
+        PlayerState.instance.inHome = false;
+    }
 }
