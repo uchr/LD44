@@ -24,6 +24,10 @@ public class PlayerState : MonoSingleton<PlayerState> {
     public UI.Slider hpBar;
     public UI.Slider oxygenBar;
 
+    [Header("Circle")]
+    public Map map;
+    public float[] circle;
+
     private int prevBallon = 0;
 
     private void Update() {
@@ -32,8 +36,10 @@ public class PlayerState : MonoSingleton<PlayerState> {
             balloon = BunkerState.items["OxygenBalloon"];
 
         if (prevBallon != balloon) {
+            map.oxygenSize = circle[balloon];
             maxOxygen = 100.0f + balloon * 100.0f;
             oxygenBar.GetComponent<RectTransform>().sizeDelta = new Vector2 (maxOxygen * 2, oxygenBar.GetComponent<RectTransform>().rect.height);
+            prevBallon = balloon;
         }
 
         if (inTheWild) {
