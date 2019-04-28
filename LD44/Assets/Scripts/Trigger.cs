@@ -9,11 +9,9 @@ public class Trigger : MonoBehaviour {
 
     private void OnTriggerEnter() {
         enter.Invoke();
-        Debug.Log("Enter: " + gameObject.name);
     }
 
     private void OnTriggerExit() {
         exit.Invoke();
-        Debug.Log("Exit: " + gameObject.name);
     }
 }

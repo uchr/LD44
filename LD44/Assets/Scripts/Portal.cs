@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Portal : MonoBehaviour {
-    private bool isActive = false;
+    public Portal portal;
+    public Transform spawnPoint;
 
-    public GameObject level;
+    private bool isActive = false;
 
     private void Enter() {
         isActive = true;
@@ -23,8 +24,12 @@ public class Portal : MonoBehaviour {
     private void Update() {
         if (isActive && Input.GetKeyDown(KeyCode.E)) {
             isActive = false;
+            
             GetComponentInParent<Level>().gameObject.SetActive(false);
-            level.SetActive(true);
+            var to = portal.GetComponentsInParent<Level>(true);
+            to[0].gameObject.SetActive(true);
+            
+            to[0].player.transform.position = portal.spawnPoint.position;
         }
     }
 }
