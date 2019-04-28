@@ -24,7 +24,18 @@ public class PlayerState : MonoSingleton<PlayerState> {
     public UI.Slider hpBar;
     public UI.Slider oxygenBar;
 
+    private int prevBallon = 0;
+
     private void Update() {
+        int balloon = 0;
+        if (BunkerState.items.ContainsKey("OxygenBalloon"))
+            balloon = BunkerState.items["OxygenBalloon"];
+
+        if (prevBallon != balloon) {
+            maxOxygen = 100.0f + balloon * 50.0f;
+            oxygenBar.GetComponent<RectTransform>().sizeDelta = new Vector2 (maxOxygen * 2, oxygenBar.GetComponent<RectTransform>().rect.height);
+        }
+
         if (inTheWild) {
             if (curOxygen > 0.0f) {
                 curOxygen -= oxygenDecreaseSpeed;
