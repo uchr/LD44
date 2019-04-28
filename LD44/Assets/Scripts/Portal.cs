@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Portal : MonoBehaviour {
-    public LevelType toLevel;
     private bool isActive = false;
+
+    public GameObject level;
 
     private void Enter() {
         isActive = true;
@@ -20,7 +21,10 @@ public class Portal : MonoBehaviour {
     }
     
     private void Update() {
-        if (isActive && Input.GetKeyDown(KeyCode.E))
-            Levels.instance.goTo(toLevel);
+        if (isActive && Input.GetKeyDown(KeyCode.E)) {
+            isActive = false;
+            GetComponentInParent<Level>().gameObject.SetActive(false);
+            level.SetActive(true);
+        }
     }
 }

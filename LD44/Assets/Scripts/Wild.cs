@@ -19,17 +19,18 @@ public class Wild : MonoBehaviour {
     }
 
     private void OnEnable() {
-        int stage = GameLogic.instance.stage;
-        foreach (var go in items[stage])
-            go.SetActive(true);
+        if (GameState.stage < items.Count) {
+            foreach (var go in items[ GameState.stage])
+                if (go != null)
+                    go.SetActive(true);
+        }
     }
 
     private void OnDisable() {
-        int stage = GameLogic.instance.stage;
-        foreach (var go in items[stage])
-            if (go != null)
-                go.SetActive(false);
-
-        GameLogic.instance.stage++;
+        if (GameState.stage < items.Count) {
+            foreach (var go in items[GameState.stage])
+                if (go != null)
+                    go.SetActive(false);
+        }
     }
 }
