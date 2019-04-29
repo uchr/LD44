@@ -10,6 +10,7 @@ public class PlaceItemQuest : MonoSingleton<PlaceItemQuest> {
     [Header("Settings")]
     public GameObject itemForPlacement;
     public int count;
+    public float timeToPlace = 3.0f;
 
     [Header("Dialogs")]
     public string startMessage;

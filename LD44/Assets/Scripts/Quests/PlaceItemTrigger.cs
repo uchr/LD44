@@ -6,9 +6,11 @@ public class PlaceItemTrigger : MonoBehaviour
 {
     public bool isActive = false;
 
+    private float waitTime = 0.0f;
+
     private void Enter() {
         isActive = true;
-        InteractSystem.instance.SetText("Press <b>E</b> to place...");
+        InteractSystem.instance.SetText("Hold <b>E</b> to place...");
     }
 
     private void Exit() {
@@ -20,9 +22,20 @@ public class PlaceItemTrigger : MonoBehaviour
         GetComponent<Trigger>().exit.AddListener(Exit);
     }
 
-    public void Update() {
-        if (isActive && Input.GetKeyDown(KeyCode.E)) {
-            Action();
+    private void Update() {
+        if (isActive && Input.GetKey(KeyCode.E)) {
+            waitTime += Time.deltaTime;
+            if (waitTime >= PlaceItemQuest.instance.timeToPlace) {
+                Action();
+            }
+        }
+        else {
+            waitTime = 0.0f;
+        }
+
+        if (isActive) {
+            float procent = Mathf.Floor(100 * waitTime / PlaceItemQuest.instance.timeToPlace);
+            InteractSystem.instance.SetText($"Hold <b>E</b> to place <b>({procent})</b>...");
         }
     }
 
@@ -34,4 +47,5 @@ public class PlaceItemTrigger : MonoBehaviour
         GameObject.Instantiate(PlaceItemQuest.instance.itemForPlacement, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
+
 }
