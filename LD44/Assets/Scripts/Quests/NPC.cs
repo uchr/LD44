@@ -8,6 +8,7 @@ public class NPC : MonoBehaviour {
 
     private void Enter() {
         isActive = true;
+        InteractSystem.instance.SetText("Press <b>E</b> to speak...");
     }
 
     private void Exit() {
@@ -20,8 +21,15 @@ public class NPC : MonoBehaviour {
     }
 
     public void Update() {
-        if (isActive && Input.GetKey(KeyCode.E)) {
-            QuestManager.instance.StartQuest(questType);
+        if (isActive && Input.GetKeyDown(KeyCode.E)) {
+            Action();
         }
+    }
+
+    private void Action() {
+        isActive = false;
+        InteractSystem.instance.HideText();
+
+        QuestManager.instance.StartQuest(questType);
     }
 }

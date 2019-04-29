@@ -10,6 +10,7 @@ public class WaitTrigger : MonoBehaviour
 
     private void Enter() {
         isActive = true;
+        InteractSystem.instance.SetText("Hold <b>E</b> to scan...");
     }
 
     private void Exit() {
@@ -25,13 +26,26 @@ public class WaitTrigger : MonoBehaviour
         if (isActive && Input.GetKey(KeyCode.E)) {
             waitTime += Time.deltaTime;
             if (waitTime >= WaitItemQuest.instance.timeToWait) {
-                WaitItemQuest.instance.PlaceItem();
-                GameObject.Instantiate(WaitItemQuest.instance.itemForPlacement, transform.position, Quaternion.identity);
-                Destroy(gameObject);
+                Action();
             }
         }
         else {
             waitTime = 0.0f;
         }
+
+        if (isActive) {
+            float procent = Mathf.Floor(100 * waitTime / WaitItemQuest.instance.timeToWait);
+            InteractSystem.instance.SetText($"Hold <b>E</b> to scan <b>({procent})</b>...");
+        }
     }
+
+    private void Action() {
+        isActive = false;
+        InteractSystem.instance.HideText();
+
+        WaitItemQuest.instance.PlaceItem();
+        GameObject.Instantiate(WaitItemQuest.instance.itemForPlacement, transform.position, Quaternion.identity);
+        Destroy(gameObject);
+    }
+
 }
