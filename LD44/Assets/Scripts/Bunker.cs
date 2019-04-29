@@ -11,15 +11,11 @@ public class Bunker : MonoBehaviour {
     public bool isHome = false;
 
     private void OnEnable() {
-        if (isHome)
-            PlayerState.instance.inHome = true;
-        /*listOfItems.text = "";
-        foreach (var item in BunkerState.items) {
-            listOfItems.text += "<b>" + item.Key + "</b> " + item.Value.ToString() + "\n";
-        }*/
+        PlayerState.instance.inHome = true;
     }
 
     private void OnDisable() {
-        PlayerState.instance.inHome = false;
+        if (PlayerState.instance != null)
+            PlayerState.instance.inHome = false;
     }
 }
