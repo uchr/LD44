@@ -7,6 +7,7 @@ public class GizmosSetting : MonoBehaviour {
 
     private void OnDrawGizmos() {
         Gizmos.color = color;
-        Gizmos.DrawMesh(GetComponent<MeshFilter>().sharedMesh, transform.position, transform.rotation, transform.localScale);
+        float avarage = (transform.lossyScale.x + transform.lossyScale.y + transform.lossyScale.z) / 6;
+        Gizmos.DrawSphere(transform.position, avarage);
     }
 }

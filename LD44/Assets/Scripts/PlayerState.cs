@@ -37,23 +37,23 @@ public class PlayerState : MonoSingleton<PlayerState> {
 
         if (prevBallon != balloon) {
             map.oxygenSize = circle[balloon];
-            maxOxygen = 100.0f + balloon * 100.0f;
+            maxOxygen = 100.0f + balloon * 50.0f;
             oxygenBar.GetComponent<RectTransform>().sizeDelta = new Vector2 (maxOxygen * 2, oxygenBar.GetComponent<RectTransform>().rect.height);
             prevBallon = balloon;
         }
 
         if (inTheWild) {
             if (curOxygen > 0.0f) {
-                curOxygen -= oxygenDecreaseSpeed;
+                curOxygen -= oxygenDecreaseSpeed * Time.deltaTime;
             }
             else {
-                curHP -= hpDecreaseSpeed;
+                curHP -= hpDecreaseSpeed * Time.deltaTime;
             }
         }
 
         if (inHome) {
             if (curOxygen < maxOxygen) {
-                curOxygen += oxygenIncreaseSpeed;
+                curOxygen += oxygenIncreaseSpeed * Time.deltaTime;
             }
         }
 
