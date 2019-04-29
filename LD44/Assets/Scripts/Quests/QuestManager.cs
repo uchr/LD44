@@ -40,7 +40,7 @@ public class QuestManager : MonoSingleton<QuestManager> {
         if (CheckComplete(type)) {
             switch (type) {
                 case QuestType.Wait:
-                    //WaitItemQuest.instance.StartQuest();
+                    WaitItemQuest.instance.EndQuest();
                 break;
                 case QuestType.Place:
                     PlaceItemQuest.instance.EndQuest();
@@ -56,7 +56,7 @@ public class QuestManager : MonoSingleton<QuestManager> {
     public void NextMonolog() {
         switch (currentQuest) {
             case QuestType.Wait:
-                //WaitItemQuest.instance.NextMonolog();
+                WaitItemQuest.instance.NextMonolog();
             break;
             case QuestType.Place:
                 PlaceItemQuest.instance.NextMonolog();
@@ -70,8 +70,7 @@ public class QuestManager : MonoSingleton<QuestManager> {
     public bool CheckComplete(QuestType type) {
         switch (type) {
             case QuestType.Wait:
-                //WaitItemQuest.instance.NextMonolog();
-                return false;
+                return WaitItemQuest.instance.isComplete;
             case QuestType.Place:
                 return PlaceItemQuest.instance.isComplete;
             case QuestType.Collect:
@@ -83,8 +82,7 @@ public class QuestManager : MonoSingleton<QuestManager> {
     public bool CheckEnd(QuestType type) {
         switch (type) {
             case QuestType.Wait:
-                //WaitItemQuest.instance.NextMonolog();
-                return false;
+                return WaitItemQuest.instance.isEnd;
             case QuestType.Place:
                 return PlaceItemQuest.instance.isEnd;
             case QuestType.Collect:

@@ -6309,11 +6309,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7c673e6083b2ad40bda41390280d8de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSolve: 0
-  itemForPlacement: {fileID: 3219386001410522343, guid: b83aae0c65417764383c22dcfa33956e,
-    type: 3}
+  isComplete: 0
+  isEnd: 0
   count: 2
   timeToWait: 3
+  startMessage: Scan pls
+  wildMonologs:
+  - Wild3
+  - Wild4
+  - Wild5
+  completePart:
+  - Nice5
+  - Nice6
+  completeMessage: CompleteScan
+  endMessage: EndScan
 --- !u!114 &920514921
 MonoBehaviour:
   m_ObjectHideFlags: 0

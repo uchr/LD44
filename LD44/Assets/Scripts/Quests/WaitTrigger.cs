@@ -43,8 +43,7 @@ public class WaitTrigger : MonoBehaviour
         isActive = false;
         InteractSystem.instance.HideText();
 
-        WaitItemQuest.instance.PlaceItem();
-        GameObject.Instantiate(WaitItemQuest.instance.itemForPlacement, transform.position, Quaternion.identity);
+        WaitItemQuest.instance.Scan();
         Destroy(gameObject);
     }
 

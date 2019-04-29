@@ -21,7 +21,7 @@ public class GameLogic : MonoSingleton<GameLogic> {
             }
         }
 
-        if (WaitItemQuest.instance.isSolve && 
+        if (WaitItemQuest.instance.isEnd && 
             PlaceItemQuest.instance.isEnd &&
             CollectItemsQuest.instance.isEnd) {
             winGame.SetActive(true);
