@@ -21,4 +21,8 @@ public class WaitItemQuest : MonoSingleton<WaitItemQuest> {
         if (count <= 0)
             isSolve = true;
     }
+
+    public void StartQuest() {
+        MonologManager.instance.SetText("Scan pls", 1.5f);
+    }
 }
