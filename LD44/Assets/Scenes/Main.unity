@@ -3296,7 +3296,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &525342547
 Transform:
   m_ObjectHideFlags: 0
@@ -4084,12 +4084,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   curHP: 100
   maxHP: 100
-  hpIncreaseSpeed: 0
-  hpDecreaseSpeed: 20
-  curOxygen: 100
-  maxOxygen: 100
-  oxygenIncreaseSpeed: 40
-  oxygenDecreaseSpeed: 5
+  hpIncreaseSpeed: 0.5
+  hpDecreaseSpeed: 0.1
+  curOxygen: 0
+  maxOxygen: 0
+  oxygenIncreaseSpeed: 0
+  oxygenDecreaseSpeed: 0
   inTheWild: 0
   inHome: 0
   hpBar: {fileID: 1932703560}
@@ -16115,7 +16115,7 @@ PrefabInstance:
     - target: {fileID: 7233312424429454119, guid: a4047edf6d4fb5a4daea2d714ea1c65e,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7233312424429454116, guid: a4047edf6d4fb5a4daea2d714ea1c65e,
         type: 3}
