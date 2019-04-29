@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour {
     private Animator animatorSide;
     private Animator animatorBackward;
 
+    public bool idleEnabled = true;
     public Dir dir;
 
     private void Awake() {
@@ -38,7 +39,8 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     private void Update() {
-        dir = Dir.None;
+        if (idleEnabled)
+            dir = Dir.None;
         if (Input.GetKey(KeyCode.S)) {
             dir = Dir.Forward;
         }
