@@ -1,14 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
-public class Item : MonoBehaviour {
+public class Portal : MonoBehaviour {
+    public Portal portal;
+    public Transform spawnPoint;
+
     public bool isActive = false;
 
     private void Enter() {
         isActive = true;
-        InteractSystem.instance.SetText("Press <b>E</b> to take...");
+        InteractSystem.instance.SetText("Press <b>E</b> to enter...");
     }
 
     private void Exit() {
@@ -30,7 +32,10 @@ public class Item : MonoBehaviour {
         isActive = false;
         InteractSystem.instance.HideText();
 
-        Inventory.instance.AddItem(gameObject.name);
-        Destroy(gameObject);
+        GetComponentInParent<Level>().gameObject.SetActive(false);
+        var to = portal.GetComponentsInParent<Level>(true);
+        to[0].gameObject.SetActive(true);
+        to[0].player.transform.position = portal.spawnPoint.position;
     }
+
 }

@@ -12,6 +12,7 @@ public class Trigger : MonoBehaviour {
     }
 
     private void OnTriggerExit() {
+        InteractSystem.instance.HideText();
         exit.Invoke();
     }
 }
