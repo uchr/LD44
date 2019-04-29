@@ -20,7 +20,7 @@ public class QuestManager : MonoSingleton<QuestManager> {
     public bool StartQuest(QuestType newQuest) {
         if (currentQuest == QuestType.None) {
             currentQuest = newQuest;
-            switch (currentQuest) {
+            switch (newQuest) {
                 case QuestType.Wait:
                     WaitItemQuest.instance.StartQuest();
                 break;
@@ -36,17 +36,60 @@ public class QuestManager : MonoSingleton<QuestManager> {
         return false;
     }
 
+    public void EndQuest(QuestType type) {
+        if (CheckComplete(type)) {
+            switch (type) {
+                case QuestType.Wait:
+                    //WaitItemQuest.instance.StartQuest();
+                break;
+                case QuestType.Place:
+                    PlaceItemQuest.instance.EndQuest();
+                break;
+                case QuestType.Collect:
+                    CollectItemsQuest.instance.EndQuest();
+                break;
+            }
+            currentQuest = QuestType.None;
+        }
+    }
+
     public void NextMonolog() {
         switch (currentQuest) {
             case QuestType.Wait:
                 //WaitItemQuest.instance.NextMonolog();
             break;
             case QuestType.Place:
-                //PlaceItemQuest.instance.NextMonolog();
+                PlaceItemQuest.instance.NextMonolog();
             break;
             case QuestType.Collect:
                 CollectItemsQuest.instance.NextMonolog();
             break;
         }
+    }
+
+    public bool CheckComplete(QuestType type) {
+        switch (type) {
+            case QuestType.Wait:
+                //WaitItemQuest.instance.NextMonolog();
+                return false;
+            case QuestType.Place:
+                return PlaceItemQuest.instance.isComplete;
+            case QuestType.Collect:
+                return CollectItemsQuest.instance.isComplete;
+        }
+        return false;
+    }
+
+    public bool CheckEnd(QuestType type) {
+        switch (type) {
+            case QuestType.Wait:
+                //WaitItemQuest.instance.NextMonolog();
+                return false;
+            case QuestType.Place:
+                return PlaceItemQuest.instance.isEnd;
+            case QuestType.Collect:
+                return CollectItemsQuest.instance.isEnd;
+        }
+        return false;
     }
 }

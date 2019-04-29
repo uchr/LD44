@@ -30,9 +30,18 @@ public class NPC : MonoBehaviour {
         isActive = false;
         InteractSystem.instance.HideText();
 
-        if (!QuestManager.instance.StartQuest(questType)) {
+        if (QuestManager.instance.currentQuest == QuestType.None) {
+            if (!QuestManager.instance.CheckEnd(questType))
+                QuestManager.instance.StartQuest(questType);
+            else
+                MonologManager.instance.SetText("You're doing fine. Lets help other", 2.5f);
+        }
+        else {
             if (QuestManager.instance.currentQuest == questType) {
-                MonologManager.instance.SetText("Lets do it", 2.5f);
+                if (QuestManager.instance.CheckComplete(questType))
+                    QuestManager.instance.EndQuest(questType);
+                else
+                    MonologManager.instance.SetText("Lets do it", 2.5f);
             }
             else {
                 MonologManager.instance.SetText("Complete another quest and get back", 2.5f);

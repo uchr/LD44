@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CollectItemsQuest : MonoSingleton<CollectItemsQuest> {
     [Header("State")]
-    public bool isSolve;
+    public bool isComplete = false;
+    public bool isEnd = false;
 
     [Header("Settings")]
     public List<string> requiredItems;
@@ -12,14 +13,12 @@ public class CollectItemsQuest : MonoSingleton<CollectItemsQuest> {
     [Header("Dialogs")]
     public string startMessage;
     public string[] wildMonologs;
-    public string complete;
-    public string end;
+    public string[] completePart;
+    public string completeMessage;
+    public string endMessage;
 
-    public string getDetail0;
-    public string getDetail1;
-    public string getDetail2;
-
-    private int nextMonolog = 0;
+    private int nextMonologInd = 0;
+    private int completePartInd = 0;
     private Dictionary<string, bool> existItems = new Dictionary<string, bool>();
 
     private void Awake() {
@@ -31,24 +30,24 @@ public class CollectItemsQuest : MonoSingleton<CollectItemsQuest> {
     }
 
     public void CheckItems(string itemName, int itemCount) {
+        if (itemName != "Detail0" && itemName != "Detail1" && itemName != "Detail2")
+            return;
+
         existItems[itemName] = true;
 
         bool check = true;
         foreach (var item in existItems) {
             check &= item.Value;
         }
-        isSolve = check;
+        isComplete = check;
 
-        if (!isSolve) {
-            if (itemName == "Detail0")
-                MonologManager.instance.SetText(getDetail0, 2.0f);
-            if (itemName == "Detail1")
-                MonologManager.instance.SetText(getDetail1, 2.0f);
-            if (itemName == "Detail2")
-                MonologManager.instance.SetText(getDetail2, 2.0f);
+        if (!isComplete) {
+            MonologManager.instance.SetText(completePart[completePartInd], 2.0f);
+            completePartInd++;
+            completePartInd = completePartInd == wildMonologs.Length ? 0 : completePartInd;
         }
         else {
-            MonologManager.instance.SetText(complete, 2.0f);
+            MonologManager.instance.SetText(completeMessage, 2.0f);
         }
     }
 
@@ -56,9 +55,17 @@ public class CollectItemsQuest : MonoSingleton<CollectItemsQuest> {
         MonologManager.instance.SetText(startMessage, 2.0f);
     }
 
+    public void EndQuest() {
+        isEnd = true;
+        MonologManager.instance.SetText(endMessage, 2.0f);
+        Inventory.instance.RemoveItem("Detail0");
+        Inventory.instance.RemoveItem("Detail1");
+        Inventory.instance.RemoveItem("Detail2");
+    }
+
     public void NextMonolog() {
-        MonologManager.instance.SetText(wildMonologs[nextMonolog], 2.0f);
-        nextMonolog++;
-        nextMonolog = nextMonolog == wildMonologs.Length ? 0 : nextMonolog;
+        MonologManager.instance.SetText(wildMonologs[nextMonologInd], 2.0f);
+        nextMonologInd++;
+        nextMonologInd = nextMonologInd == wildMonologs.Length ? 0 : nextMonologInd;
     }
 }
