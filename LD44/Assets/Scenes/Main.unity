@@ -3513,11 +3513,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1369797689}
-    - target: {fileID: 3180187599354582029, guid: eeed9c3f221f1ea49abc2536819d00a1,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.8
-      objectReference: {fileID: 0}
     - target: {fileID: 2149229424409905967, guid: eeed9c3f221f1ea49abc2536819d00a1,
         type: 3}
       propertyPath: color.a
@@ -8427,11 +8422,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1369797689}
-    - target: {fileID: 3180187599354582029, guid: eeed9c3f221f1ea49abc2536819d00a1,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.8
-      objectReference: {fileID: 0}
     - target: {fileID: 2149229424409905967, guid: eeed9c3f221f1ea49abc2536819d00a1,
         type: 3}
       propertyPath: color.a
@@ -11200,11 +11190,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1369797689}
-    - target: {fileID: 3180187599354582029, guid: eeed9c3f221f1ea49abc2536819d00a1,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.8
-      objectReference: {fileID: 0}
     - target: {fileID: 2149229424409905967, guid: eeed9c3f221f1ea49abc2536819d00a1,
         type: 3}
       propertyPath: color.a

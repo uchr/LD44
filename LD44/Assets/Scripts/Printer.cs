@@ -10,16 +10,12 @@ public class Printer : MonoBehaviour {
     public GameObject textGO;
     public TextMeshPro text;
 
-    private bool isActive = false;
-
     private void Enter() {
-        isActive = true;
         text.text = desc;
         textGO.SetActive(true);
     }
 
     private void Exit() {
-        isActive = false;
         textGO.SetActive(false);
     }
 
