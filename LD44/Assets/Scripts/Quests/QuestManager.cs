@@ -2,17 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QuestManager : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+public enum QuestType {
+    Wait,
+    Place,
+    Collect,
+    None
+}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+public class QuestManager : MonoSingleton<QuestManager> {
+    public QuestType currentQuest = QuestType.None;
+
+    public bool StartQuest(QuestType newQuest) {
+        if (currentQuest == QuestType.None) {
+            currentQuest = newQuest;
+            return true;
+        }
+        return false;
     }
 }

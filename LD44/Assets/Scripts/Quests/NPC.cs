@@ -2,17 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPC : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+public class NPC : MonoBehaviour {
+    public QuestType questType;
+    public bool isActive = false;
+
+    private void Enter() {
+        isActive = true;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void Exit() {
+        isActive = false;
+    }
+    
+    private void Awake() {
+        GetComponentInChildren<Trigger>().enter.AddListener(Enter);
+        GetComponentInChildren<Trigger>().exit.AddListener(Exit);
+    }
+
+    public void Update() {
+        if (isActive && Input.GetKey(KeyCode.E)) {
+            QuestManager.instance.StartQuest(questType);
+        }
     }
 }
