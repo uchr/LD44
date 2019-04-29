@@ -950,7 +950,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &162030942
 Transform:
   m_ObjectHideFlags: 0
@@ -3513,6 +3513,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1369797689}
+    - target: {fileID: 3180187599354582029, guid: eeed9c3f221f1ea49abc2536819d00a1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 2149229424409905967, guid: eeed9c3f221f1ea49abc2536819d00a1,
         type: 3}
       propertyPath: color.a
@@ -8422,6 +8427,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1369797689}
+    - target: {fileID: 3180187599354582029, guid: eeed9c3f221f1ea49abc2536819d00a1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 2149229424409905967, guid: eeed9c3f221f1ea49abc2536819d00a1,
         type: 3}
       propertyPath: color.a
@@ -8776,11 +8786,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2149229424409905965, guid: eeed9c3f221f1ea49abc2536819d00a1,
         type: 3}
-      propertyPath: level
-      value: 
-      objectReference: {fileID: 1184842605}
-    - target: {fileID: 2149229424409905965, guid: eeed9c3f221f1ea49abc2536819d00a1,
-        type: 3}
       propertyPath: portal
       value: 
       objectReference: {fileID: 1625876399}
@@ -8844,11 +8849,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1369797689}
-    - target: {fileID: 2149229424409905967, guid: eeed9c3f221f1ea49abc2536819d00a1,
-        type: 3}
-      propertyPath: color.a
-      value: 0.14117648
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eeed9c3f221f1ea49abc2536819d00a1, type: 3}
 --- !u!4 &1218525931 stripped
@@ -11200,6 +11200,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1369797689}
+    - target: {fileID: 3180187599354582029, guid: eeed9c3f221f1ea49abc2536819d00a1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 2149229424409905967, guid: eeed9c3f221f1ea49abc2536819d00a1,
         type: 3}
       propertyPath: color.a

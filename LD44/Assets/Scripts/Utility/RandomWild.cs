@@ -11,7 +11,7 @@ public class RandomWild : MonoBehaviour {
         for (int i = 0; i < numberOfProps; ++i) {
             var pos = new Vector3(Random.Range(-size, size), 0.0f, Random.Range(-size, size));
             GameObject prop = props[Random.Range(0, props.Length)];
-            GameObject.Instantiate(prop, pos, Quaternion.identity);
+            GameObject.Instantiate(prop, pos, Quaternion.identity, transform);
         }
     }
 }
