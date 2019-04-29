@@ -11,7 +11,8 @@ public enum Dir {
 }
 
 public class PlayerMovement : MonoBehaviour {
-    public float speed;
+    public float fastSpeed = 20.0f;
+    public float normalSpeed = 7.5f;
 
     public GameObject forward;
     public GameObject side;
@@ -26,6 +27,7 @@ public class PlayerMovement : MonoBehaviour {
 
     public bool idleEnabled = true;
     public Dir dir;
+    private float speed;
 
     private void Awake() {
         rb = GetComponent<Rigidbody>();
@@ -39,6 +41,11 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     private void Update() {
+        if (Input.GetKey(KeyCode.LeftShift))
+            speed = fastSpeed;
+        else 
+            speed = normalSpeed;
+
         if (idleEnabled)
             dir = Dir.None;
         if (Input.GetKey(KeyCode.S)) {

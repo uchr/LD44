@@ -21,11 +21,9 @@ public class GameLogic : MonoSingleton<GameLogic> {
             }
         }
 
-        if (PlayerState.instance.items.ContainsKey("Detail0") && 
-            PlayerState.instance.items.ContainsKey("Detail1") && 
-            PlayerState.instance.items.ContainsKey("Detail2") && 
-            homeBunker.activeSelf) {
-            
+        if (WaitItemQuest.instance.isSolve && 
+            PlaceItemQuest.instance.isSolve &&
+            CollectItemsQuest.instance.isSolve) {
             winGame.SetActive(true);
             Time.timeScale = 0.0f;
             if (Input.anyKeyDown) {
