@@ -51,7 +51,10 @@ public class PlaceItemQuest : MonoSingleton<PlaceItemQuest> {
     }
 
     public void NextMonolog() {
-        MonologManager.instance.SetText(wildMonologs[nextMonologInd], 2.0f);
+        var voice = Stem.SoundManager.GrabSound("Monolog0");
+        var voiceSettings = Stem.SoundManager.GetSound("Monolog0");
+        voice.Play();
+        MonologManager.instance.SetText(wildMonologs[nextMonologInd], voice.Sound.Variations[0].Clip.length);
         nextMonologInd++;
         nextMonologInd = nextMonologInd == wildMonologs.Length ? 0 : nextMonologInd;
     }
