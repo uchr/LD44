@@ -29,4 +29,8 @@ public class CollectItemsQuest : MonoSingleton<CollectItemsQuest>
 
         isSolve = check;
     }
+
+    public void StartQuest() {
+        MonologManager.instance.SetText("Collect items pls", 0.5f);
+    }
 }

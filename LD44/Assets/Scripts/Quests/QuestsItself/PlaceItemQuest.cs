@@ -20,4 +20,8 @@ public class PlaceItemQuest : MonoSingleton<PlaceItemQuest> {
         if (count <= 0)
             isSolve = true;
     }
+
+    public void StartQuest() {
+        MonologManager.instance.SetText("Place items pls", 1.5f);
+    }
 }

@@ -30,6 +30,13 @@ public class NPC : MonoBehaviour {
         isActive = false;
         InteractSystem.instance.HideText();
 
-        QuestManager.instance.StartQuest(questType);
+        if (!QuestManager.instance.StartQuest(questType)) {
+            if (QuestManager.instance.currentQuest == questType) {
+                MonologManager.instance.SetText("Lets do it", 2.5f);
+            }
+            else {
+                MonologManager.instance.SetText("Complete another quest and get back", 2.5f);
+            }
+        }
     }
 }
