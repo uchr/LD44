@@ -4,18 +4,21 @@ using UnityEngine;
 using TMPro;
 
 public class MonologManager : MonoSingleton<MonologManager> {
+    public bool isActive = false;
     public GameObject panel;
     public TextMeshProUGUI message;
 
     private float timer;
 
     public void SetText(string text, float time) {
+        isActive = true;
         timer = time;
         panel.SetActive(true);
         message.text = text;
     }
 
     public void HideText() {
+        isActive = false;
         panel.SetActive(false);
     }
 

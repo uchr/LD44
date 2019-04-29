@@ -9,6 +9,11 @@ public enum QuestType {
     None
 }
 
+public enum QuestStage {
+    Start,
+    FirstExitFromBunker,
+}
+
 public class QuestManager : MonoSingleton<QuestManager> {
     public QuestType currentQuest = QuestType.None;
 
@@ -29,5 +34,19 @@ public class QuestManager : MonoSingleton<QuestManager> {
             return true;
         }
         return false;
+    }
+
+    public void NextMonolog() {
+        switch (currentQuest) {
+            case QuestType.Wait:
+                //WaitItemQuest.instance.NextMonolog();
+            break;
+            case QuestType.Place:
+                //PlaceItemQuest.instance.NextMonolog();
+            break;
+            case QuestType.Collect:
+                CollectItemsQuest.instance.NextMonolog();
+            break;
+        }
     }
 }

@@ -3471,7 +3471,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &525342547
 Transform:
   m_ObjectHideFlags: 0
@@ -4548,6 +4548,7 @@ Transform:
   - {fileID: 1243127489}
   - {fileID: 1558476607}
   - {fileID: 920514917}
+  - {fileID: 954992997}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6097,6 +6098,16 @@ MonoBehaviour:
   - Detail0
   - Detail1
   - Detail2
+  startMessage: Collect items pls
+  wildMonologs:
+  - One in bunker of brother
+  - One in old bunker
+  - One in somewhere
+  complete: I print it and go to rocket
+  end: Thank you. U rly help me
+  getDetail0: It was main detail
+  getDetail1: I belive u can do it
+  getDetail2: I don't understand why it was there
 --- !u!114 &920514919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6451,6 +6462,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 949797385}
   m_CullTransparentMesh: 0
+--- !u!1 &954992996
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 954992997}
+  - component: {fileID: 954992998}
+  m_Layer: 0
+  m_Name: WildMonologs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &954992997
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954992996}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 670623359}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &954992998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954992996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 669d7cfe3cbf3044eb94c9ee1d0256fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredTime: 0.5
 --- !u!1 &959741549
 GameObject:
   m_ObjectHideFlags: 0
@@ -6557,7 +6612,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &970767021
 Transform:
   m_ObjectHideFlags: 0
@@ -13108,6 +13163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4be97c86e6900d44f965e44d47430ded, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isActive: 0
   panel: {fileID: 706505643}
   message: {fileID: 82134106}
 --- !u!1 &2047238088
