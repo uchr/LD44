@@ -6,7 +6,8 @@ public enum Dir {
     Forward,
     Backward,
     Right,
-    Left
+    Left,
+    None
 }
 
 public class PlayerMovement : MonoBehaviour {
@@ -37,28 +38,29 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     private void Update() {
-        if (Input.GetKeyDown(KeyCode.W)) {
-            dir = Dir.Backward;
-        }
-        if (Input.GetKeyDown(KeyCode.S)) {
+        dir = Dir.None;
+        if (Input.GetKey(KeyCode.S)) {
             dir = Dir.Forward;
         }
-        if (Input.GetKeyDown(KeyCode.D)) {
+        if (Input.GetKey(KeyCode.W)) {
+            dir = Dir.Backward;
+        }
+        if (Input.GetKey(KeyCode.D)) {
             dir = Dir.Right;
         }
-        if (Input.GetKeyDown(KeyCode.A)) {
+        if (Input.GetKey(KeyCode.A)) {
             dir = Dir.Left;
         }
 
         switch (dir) {
+            case Dir.None:
+                animatorForward.SetBool("walk", false);
+                forward.SetActive(true);
+                side.SetActive(false);
+                backward.SetActive(false);
+                break;
             case Dir.Forward:
-                if (isWild) {
-
-                }
-                else {
-                    side.transform.localPosition = new Vector3(0.728f, -0.5601841f, -0.123f);
-                }
-                animatorForward.SetBool("walk", Mathf.Abs(rb.velocity.z) > 0.01f);
+                animatorForward.SetBool("walk", true);
 
                 forward.SetActive(true);
                 side.SetActive(false);
@@ -67,10 +69,10 @@ public class PlayerMovement : MonoBehaviour {
 
             case Dir.Backward:
                 if (isWild) {
-                    backward.transform.localPosition = new Vector3(0.74f, 0.903f, -0.069f);
+                    backward.transform.localPosition = new Vector3(0.741f, 0.903f, -0.082f);
                 }
                 else {
-                    backward.transform.localPosition = new Vector3(0.389f, -0.5601841f, 0.106f);
+                    backward.transform.localPosition = new Vector3(0.779f, 0f, -0.091f);
                 }
                 forward.SetActive(false);
                 side.SetActive(false);
@@ -79,10 +81,10 @@ public class PlayerMovement : MonoBehaviour {
 
             case Dir.Right:
                 if (isWild) {
-                    side.transform.localPosition = new Vector3(0.614f, 0.903f, 0.136f);
+                    side.transform.localPosition = new Vector3(0.796f, 1.3f, 0.435f);
                 }
                 else {
-                    side.transform.localPosition = new Vector3(0.389f, -0.5601841f, 0.106f);
+                    side.transform.localPosition = new Vector3(0.901f, 0f, 0.607f);
                 }
 
                 side.transform.localScale = new Vector3(0.3443782f, 0.3443782f, 0.3443782f);
@@ -93,10 +95,10 @@ public class PlayerMovement : MonoBehaviour {
 
             case Dir.Left:
                 if (isWild) {
-                    side.transform.localPosition = new Vector3(-0.606f, 0.903f, 0.134f);
+                    side.transform.localPosition = new Vector3(-0.844f, 1.3f, 0.435f);
                 }
                 else {
-                    side.transform.localPosition = new Vector3(-0.44f, 0, 0.08f);
+                    side.transform.localPosition = new Vector3(-0.836f, 0, 0.607f);
                 }
                 
                 side.transform.localScale = new Vector3(-0.3443782f, 0.3443782f, 0.3443782f);
@@ -106,6 +108,7 @@ public class PlayerMovement : MonoBehaviour {
             break;
         }
 
-        rb.velocity = new Vector3(Input.GetAxis("Horizontal") * speed, rb.velocity.y, Input.GetAxis("Vertical") * speed);
+        Vector3 inputDir = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical")).normalized;
+        rb.velocity = new Vector3(inputDir.x * speed, rb.velocity.y, inputDir.z * speed);
     }
 }
