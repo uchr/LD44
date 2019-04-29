@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public static class GameState {
-    public static int stage = 0;
-}
-
 public class GameLogic : MonoSingleton<GameLogic> {
     public GameObject winGame;
     public GameObject endGame;
     public GameObject homeBunker;
 
-    public void Update() {
+    private void Awake() {
+        Time.timeScale = 1.0f;
+    }
+
+    private void Update() {
         if (PlayerState.instance.curHP <= 0.0f) {
             endGame.SetActive(true);
             Time.timeScale = 0.0f;
@@ -21,9 +21,9 @@ public class GameLogic : MonoSingleton<GameLogic> {
             }
         }
 
-        if (BunkerState.items.ContainsKey("Detail0") && 
-            BunkerState.items.ContainsKey("Detail1") && 
-            BunkerState.items.ContainsKey("Detail2") && 
+        if (PlayerState.instance.items.ContainsKey("Detail0") && 
+            PlayerState.instance.items.ContainsKey("Detail1") && 
+            PlayerState.instance.items.ContainsKey("Detail2") && 
             homeBunker.activeSelf) {
             
             winGame.SetActive(true);

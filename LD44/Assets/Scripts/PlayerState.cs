@@ -4,6 +4,9 @@ using UnityEngine;
 using UI = UnityEngine.UI;
 
 public class PlayerState : MonoSingleton<PlayerState> {
+    [Header("Items")]
+    public Dictionary<string, int> items = new Dictionary<string, int>();
+
     [Header("HP")]
     public float curHP = 100.0f;
     public float maxHP = 100.0f;
@@ -32,8 +35,8 @@ public class PlayerState : MonoSingleton<PlayerState> {
 
     private void Update() {
         int balloon = 0;
-        if (BunkerState.items.ContainsKey("OxygenBalloon"))
-            balloon = BunkerState.items["OxygenBalloon"];
+        if (items.ContainsKey("OxygenBalloon"))
+            balloon = items["OxygenBalloon"];
 
         if (prevBallon != balloon) {
             map.oxygenSize = circle[balloon];

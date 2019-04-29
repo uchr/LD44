@@ -6,10 +6,10 @@ using TMPro;
 public class Item : MonoBehaviour {
     private void Enter() {
         var itemName = gameObject.name;
-        if (!BunkerState.items.ContainsKey(itemName)) {
-            BunkerState.items.Add(itemName, 0);
+        if (!PlayerState.instance.items.ContainsKey(itemName)) {
+            PlayerState.instance.items.Add(itemName, 0);
         }
-        BunkerState.items[itemName]++;
+        PlayerState.instance.items[itemName]++;
         Destroy(gameObject);
     }
 
