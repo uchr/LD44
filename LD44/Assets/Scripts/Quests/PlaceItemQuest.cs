@@ -2,17 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlaceItemQuest : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+public class PlaceItemQuest : MonoSingleton<PlaceItemQuest> {
+    public bool isSolve;
+
+    public GameObject itemForPlacement;
+    public int count;
+
+    private void Awake() {
+        for (int i = 0; i < count; ++i) {
+            Inventory.instance.AddItem(itemForPlacement.name);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void PlaceItem() {
+        count--;
+        Inventory.instance.RemoveItem(itemForPlacement.name);
+        if (count <= 0)
+            isSolve = true;
     }
 }

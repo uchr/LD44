@@ -21,7 +21,7 @@ public class GameLogic : MonoSingleton<GameLogic> {
             }
         }
 
-        if (CollectItemsQuest.instance.isSolve) {
+        if (PlaceItemQuest.instance.isSolve) {
             winGame.SetActive(true);
             Time.timeScale = 0.0f;
             if (Input.anyKeyDown) {
