@@ -17,6 +17,10 @@ public class Inventory : MonoSingleton<Inventory> {
 
     [Header("UI")]
     public TextMeshProUGUI listOfItems;
+    public GameObject detail0;
+    public GameObject detail1;
+    public GameObject detail2;
+    public GameObject disk;
 
     private Dictionary<string, int> items = new Dictionary<string, int>();
 
@@ -24,6 +28,15 @@ public class Inventory : MonoSingleton<Inventory> {
         if (!items.ContainsKey(itemName))
             items.Add(itemName, 0);
         items[itemName]++;
+
+        if (itemName == "Detail0")
+            detail0.SetActive(true);
+        if (itemName == "Detail1")
+            detail1.SetActive(true);
+        if (itemName == "Detail2")
+            detail2.SetActive(true);
+        if (itemName == "Disk")
+            disk.SetActive(true);
 
         addItem.Invoke(itemName, items[itemName]);
 
@@ -46,6 +59,15 @@ public class Inventory : MonoSingleton<Inventory> {
             items[itemName]--;
             count = items[itemName];
         }
+
+        if (itemName == "Detail0")
+            detail0.SetActive(false);
+        if (itemName == "Detail1")
+            detail1.SetActive(false);
+        if (itemName == "Detail2")
+            detail2.SetActive(false);
+        if (itemName == "Disk" && count == 0)
+            disk.SetActive(false);
 
         if (items[itemName] <= 0)
             items.Remove(itemName);
