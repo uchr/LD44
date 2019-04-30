@@ -9,6 +9,7 @@ public class CollectItemsQuest : MonoSingleton<CollectItemsQuest> {
 
     [Header("Settings")]
     public List<string> requiredItems;
+    public GameObject[] detailsObject;
 
     [Header("Dialogs")]
     public string startMessage;
@@ -27,6 +28,9 @@ public class CollectItemsQuest : MonoSingleton<CollectItemsQuest> {
         foreach (var itemName in requiredItems) {
             existItems[itemName] = false;
         }
+
+        foreach (var go in detailsObject)
+            go.SetActive(false);
     }
 
     public void CheckItems(string itemName, int itemCount) {
@@ -53,6 +57,8 @@ public class CollectItemsQuest : MonoSingleton<CollectItemsQuest> {
 
     public void StartQuest() {
         MonologManager.instance.SetText(startMessage, "VitaStartQuest");
+        foreach (var go in detailsObject)
+            go.SetActive(true);
     }
 
     public void EndQuest() {
