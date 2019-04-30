@@ -10,6 +10,7 @@ public class WaitItemQuest : MonoSingleton<WaitItemQuest> {
     [Header("Settings")]
     public int count = 2;
     public float timeToWait = 3.0f;
+    public GameObject[] placesToWait;
 
     [Header("Dialogs")]
     public string startMessage;
@@ -20,6 +21,11 @@ public class WaitItemQuest : MonoSingleton<WaitItemQuest> {
 
     private int nextMonologInd = 0;
     private int completePartInd = 0;
+
+    private void Awake() {
+        foreach (var go in placesToWait)
+            go.SetActive(false);
+    }
 
     public void Scan() {
         count--;
@@ -38,6 +44,9 @@ public class WaitItemQuest : MonoSingleton<WaitItemQuest> {
 
     public void StartQuest() {
         MonologManager.instance.SetText(startMessage, "DittoStartQuest");
+
+        foreach (var go in placesToWait)
+            go.SetActive(true);
     }
 
     public void EndQuest() {

@@ -11,6 +11,7 @@ public class PlaceItemQuest : MonoSingleton<PlaceItemQuest> {
     public GameObject itemForPlacement;
     public int count;
     public float timeToPlace = 3.0f;
+    public GameObject[] placesToPlace;
 
     [Header("Dialogs")]
     public string startMessage;
@@ -20,6 +21,11 @@ public class PlaceItemQuest : MonoSingleton<PlaceItemQuest> {
 
     private int nextMonologInd = 0;
     private int completePartInd = 0;
+
+    private void Awake() {
+        foreach (var go in placesToPlace)
+            go.SetActive(false);
+    }
 
     public void PlaceItem() {
         count--;
@@ -42,6 +48,9 @@ public class PlaceItemQuest : MonoSingleton<PlaceItemQuest> {
         for (int i = 0; i < count; ++i) {
             Inventory.instance.AddItem(itemForPlacement.name);
         }
+
+        foreach (var go in placesToPlace)
+            go.SetActive(true);
     }
 
     public void EndQuest() {

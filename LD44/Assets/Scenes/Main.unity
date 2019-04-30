@@ -27431,7 +27431,7 @@ SpriteShapeRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 409176131}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -34235,7 +34235,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &525342547
 Transform:
   m_ObjectHideFlags: 0
@@ -43355,7 +43355,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 674595308}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.61, y: 0, z: 21.91}
+  m_LocalPosition: {x: -25.01, y: 0, z: 5.02}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1271554969}
@@ -58003,6 +58003,12 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 230064b060e860a488b17c2859239c68, type: 3}
+--- !u!1 &911884495 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3378515064644912372, guid: 6824a47e73e48854fb34895ee40560e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 758242449}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &911884496 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3378515064644912382, guid: 6824a47e73e48854fb34895ee40560e4,
@@ -58670,7 +58676,10 @@ MonoBehaviour:
   - Detail0
   - Detail1
   - Detail2
-  detailsObject: []
+  detailsObject:
+  - {fileID: 911884495}
+  - {fileID: 2107738388}
+  - {fileID: 952858014}
   startMessage: Collect items pls
   wildMonologs:
   - One in bunker of brother
@@ -58698,8 +58707,13 @@ MonoBehaviour:
   isEnd: 0
   itemForPlacement: {fileID: 3219386001410522343, guid: b83aae0c65417764383c22dcfa33956e,
     type: 3}
-  count: 2
+  count: 4
   timeToPlace: 3
+  placesToPlace:
+  - {fileID: 2021638211}
+  - {fileID: 460713444}
+  - {fileID: 1732059749}
+  - {fileID: 1074037722}
   startMessage: Place pls
   wildMonologs:
   - Wild0
@@ -58723,8 +58737,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isComplete: 0
   isEnd: 0
-  count: 2
+  count: 4
   timeToWait: 3
+  placesToWait:
+  - {fileID: 1466165093}
+  - {fileID: 674595308}
+  - {fileID: 1292094977}
+  - {fileID: 1254805740}
   startMessage: Scan pls
   wildMonologs:
   - Wild3
@@ -60612,6 +60631,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &952858014 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3378515064644912372, guid: 6824a47e73e48854fb34895ee40560e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 646283624}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &952858015 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3378515064644912382, guid: 6824a47e73e48854fb34895ee40560e4,
@@ -62643,7 +62668,7 @@ PrefabInstance:
     - target: {fileID: 7233312424429454119, guid: a4047edf6d4fb5a4daea2d714ea1c65e,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7233312424429454116, guid: a4047edf6d4fb5a4daea2d714ea1c65e,
         type: 3}
@@ -68356,7 +68381,7 @@ GameObject:
   - component: {fileID: 1074037725}
   - component: {fileID: 1074037724}
   m_Layer: 0
-  m_Name: PlaceToPlaceTrigger (2)
+  m_Name: PlaceToPlaceTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73932,7 +73957,7 @@ SpriteShapeRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1166274874}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -79666,6 +79691,101 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1254805740
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1254805741}
+  - component: {fileID: 1254805745}
+  - component: {fileID: 1254805744}
+  - component: {fileID: 1254805743}
+  - component: {fileID: 1254805742}
+  m_Layer: 0
+  m_Name: PlaceToWaitTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1254805741
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254805740}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 21.88, y: 0, z: -13.12}
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_Children: []
+  m_Father: {fileID: 1271554969}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1254805742
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254805740}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1254805743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254805740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e87c7434987232d4ca7deae1a523ed7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 0.873159, g: 0.015686274, b: 1, a: 0.43529412}
+--- !u!114 &1254805744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254805740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90194edb859d8f44d94cbde979e5bb34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  exit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1254805745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254805740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 602b520928b84254ea7a9f4eeb9590e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isActive: 0
 --- !u!1 &1254931581
 GameObject:
   m_ObjectHideFlags: 0
@@ -80608,6 +80728,8 @@ Transform:
   m_Children:
   - {fileID: 1466165094}
   - {fileID: 674595309}
+  - {fileID: 1292094978}
+  - {fileID: 1254805741}
   m_Father: {fileID: 583054441}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -81924,6 +82046,101 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1964798, y: 0.5788293, z: 0.33764738}
   m_Center: {x: 0.007762909, y: 0.29481864, z: 0.16516826}
+--- !u!1 &1292094977
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1292094978}
+  - component: {fileID: 1292094982}
+  - component: {fileID: 1292094981}
+  - component: {fileID: 1292094980}
+  - component: {fileID: 1292094979}
+  m_Layer: 0
+  m_Name: PlaceToWaitTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1292094978
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292094977}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 13.52, y: 0, z: 11.7}
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_Children: []
+  m_Father: {fileID: 1271554969}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1292094979
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292094977}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1292094980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292094977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e87c7434987232d4ca7deae1a523ed7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 0.873159, g: 0.015686274, b: 1, a: 0.43529412}
+--- !u!114 &1292094981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292094977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90194edb859d8f44d94cbde979e5bb34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  exit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1292094982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292094977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 602b520928b84254ea7a9f4eeb9590e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isActive: 0
 --- !u!1 &1292604202
 GameObject:
   m_ObjectHideFlags: 0
@@ -92082,7 +92299,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1466165093}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.22, y: 0, z: 22.67}
+  m_LocalPosition: {x: -24.81, y: 0, z: -20.2}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1271554969}
@@ -108771,7 +108988,7 @@ GameObject:
   - component: {fileID: 1732059752}
   - component: {fileID: 1732059751}
   m_Layer: 0
-  m_Name: PlaceToPlaceTrigger (1)
+  m_Name: PlaceToPlaceTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -132552,6 +132769,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.31355286, y: 0.5788293, z: 0.23172292}
   m_Center: {x: 0.031181335, y: 0.29481864, z: 0.13179545}
+--- !u!1 &2107738388 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3378515064644912372, guid: 6824a47e73e48854fb34895ee40560e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1110175217}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2107776273
 GameObject:
   m_ObjectHideFlags: 0
