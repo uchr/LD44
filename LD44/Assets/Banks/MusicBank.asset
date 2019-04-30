@@ -18,7 +18,7 @@ MonoBehaviour:
   - name: MainTheme
     tracks:
     - clip: {fileID: 8300000, guid: 7ae00e009229c8b40b64aa7651c40cbd, type: 3}
-      volume: 0.05
+      volume: 0.012
     unfolded: 1
   players:
   - name: Music
