@@ -58680,17 +58680,21 @@ MonoBehaviour:
   - {fileID: 911884495}
   - {fileID: 2107738388}
   - {fileID: 952858014}
-  startMessage: Collect items pls
+  startMessage: My 3D printer is really bad, look for details for it in the neighborhood.
+    Let's fix it and we can print something for the rocket.
   wildMonologs:
-  - One in bunker of brother
-  - One in old bunker
-  - One in somewhere
+  - Surely one of the parts pulled my brother, look for him in the bunker.
+  - The rest are lying around somewhere. Somewhere near the remains of humanity, ha.
+  - I used to adore post-apocalypse. Until it was in it, now it is the most boring
+    genre in the world.
+  - No, well, count up, giant radioactive pumpkin. Who tell - do not believe! Only
+    there is no one to tell.
   completePart:
-  - It was main detail
-  - I belive u can do it
-  - I don't understand why it was there
-  completeMessage: I print it and go to rocket
-  endMessage: Thank you. U rly help me
+  - This was the main part!
+  - Not sure if this is the right part, but I will try to insert it.
+  completeMessage: This is the last, drag them here.
+  endMessage: All details? The fire! Now this old man will come back into service
+    and provide us with important pieces for the rocket.
 --- !u!114 &920514919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58714,15 +58718,25 @@ MonoBehaviour:
   - {fileID: 460713444}
   - {fileID: 1732059749}
   - {fileID: 1074037722}
-  startMessage: Place pls
+  startMessage: Grab the antenna, we need to make some measurements. I'll tell you
+    on the way.
   wildMonologs:
-  - Wild0
-  - Wild1
-  - Wild2
+  - First, place the antennas around our rocket. Well, the very one, by repairing
+    which we can dump out of this hole.
+  - Be careful, the atmosphere is contaminated. If I were you, I would not take long
+    walks, or even die.
+  - "Of course, we knew that soon it would be babakhnet, but I thought it would be
+    ... well, you know .. politics, and not some farmer\u2019s check."
+  - Previously, I also had my own vegetable garden, but I did not grow vegetables
+    on uranium.
+  - But the pumpkin pie, I would still screwed
+  - Are you placing or drooling?
   completePart:
-  - Nice1
-  - Nice2
-  endMessage: EndPlace
+  - I see the first radar on the horizon!
+  - This is a joke. I'm in a bunker. But I see them on the screen.
+  - I hope they can work in automatic mode.
+  endMessage: It is done! Run to the twins, some measurements and a couple of details
+    will bring our rocket to life.
 --- !u!114 &920514920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58744,16 +58758,18 @@ MonoBehaviour:
   - {fileID: 674595308}
   - {fileID: 1292094977}
   - {fileID: 1254805740}
-  startMessage: Scan pls
+  startMessage: Has placed antety? Fine! Now it is necessary to make measurements.
   wildMonologs:
-  - Wild3
-  - Wild4
-  - Wild5
+  - It will take some time. Try not to think about how small our rocket is.
+  - Calibrate?
+  - Hopefully we will find a new planet without pumpkins and damn farmers ... and
+    radioactive elements.
+  - It used to be fun here, but now you have to hang around these antennas for ages.
   completePart:
-  - Nice5
-  - Nice6
-  completeMessage: CompleteScan
-  endMessage: EndScan
+  - It could have been a couple of degrees to the left. Although it is normal.
+  - Can you imagine how we will be there?
+  - One more is left and we will be at the goal.
+  endMessage: I believe that you can handle it. Just do it.
 --- !u!114 &920514921
 MonoBehaviour:
   m_ObjectHideFlags: 0

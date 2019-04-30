@@ -16,7 +16,6 @@ public class WaitItemQuest : MonoSingleton<WaitItemQuest> {
     public string startMessage;
     public string[] wildMonologs;
     public string[] completePart;
-    public string completeMessage;
     public string endMessage;
 
     private int nextMonologInd = 0;

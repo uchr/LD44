@@ -31,16 +31,26 @@ public class NPC : MonoBehaviour {
         InteractSystem.instance.HideText();
 
         if (QuestManager.instance.currentQuest == QuestType.None) {
-            if (!QuestManager.instance.CheckEnd(questType))
-                QuestManager.instance.StartQuest(questType);
+            if (QuestType.Wait == questType) {
+                if (PlaceItemQuest.instance.isEnd && CollectItemsQuest.instance.isEnd) {
+                    QuestManager.instance.StartQuest(questType);
+                }
+                else {
+                    MonologManager.instance.SetText("Uncle Wo needs you now, check me out when you finish his task.", "DittoNotReadu");
+                }
+            }
             else {
-                switch (questType) {
-                    case QuestType.Place:
-                        MonologManager.instance.SetText("It is done! Run to the twins, some measurements and a couple of details will bring our rocket to life.", "UncleVoAlreadyEndQuest");
-                    break;
-                    case QuestType.Collect:
-                        MonologManager.instance.SetText("I almost printed out all the parts of the rocket. Soon she will be ready. Help Ditto.", "VitaAlreadyEndQuest");
-                    break;
+                if (!QuestManager.instance.CheckEnd(questType))
+                    QuestManager.instance.StartQuest(questType);
+                else {
+                    switch (questType) {
+                        case QuestType.Place:
+                            MonologManager.instance.SetText("It is done! Run to the twins, some measurements and a couple of details will bring our rocket to life.", "UncleVoAlreadyEndQuest");
+                        break;
+                        case QuestType.Collect:
+                            MonologManager.instance.SetText("I almost printed out all the parts of the rocket. Soon she will be ready. Help Ditto.", "VitaAlreadyEndQuest");
+                        break;
+                    }
                 }
             }
         }
