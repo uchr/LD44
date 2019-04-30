@@ -58855,7 +58855,6 @@ MonoBehaviour:
   completePart:
   - Nice1
   - Nice2
-  completeMessage: CompletePlace
   endMessage: EndPlace
 --- !u!114 &920514920
 MonoBehaviour:
@@ -60927,7 +60926,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 669d7cfe3cbf3044eb94c9ee1d0256fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredTime: 0.5
+  requiredTime: 1.5
   timeFromLastSpeach: 0
 --- !u!1 &956367875
 GameObject:

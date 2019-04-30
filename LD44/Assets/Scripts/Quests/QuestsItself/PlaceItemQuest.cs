@@ -16,7 +16,6 @@ public class PlaceItemQuest : MonoSingleton<PlaceItemQuest> {
     public string startMessage;
     public string[] wildMonologs;
     public string[] completePart;
-    public string completeMessage;
     public string endMessage;
 
     private int nextMonologInd = 0;
@@ -29,17 +28,17 @@ public class PlaceItemQuest : MonoSingleton<PlaceItemQuest> {
             isComplete = true;
 
         if (!isComplete) {
-            MonologManager.instance.SetText(completePart[completePartInd], 2.0f);
+            MonologManager.instance.SetText(completePart[completePartInd], "UncleVoPart" + completePartInd.ToString());
             completePartInd++;
             completePartInd = completePartInd == wildMonologs.Length ? 0 : completePartInd;
         }
         else {
-            MonologManager.instance.SetText(completeMessage, 2.0f);
+            QuestManager.instance.EndQuest(QuestType.Place);
         }
     }
 
     public void StartQuest() {
-        MonologManager.instance.SetText(startMessage, 1.5f);
+        MonologManager.instance.SetText(startMessage, "UncleVoStartQuest");
         for (int i = 0; i < count; ++i) {
             Inventory.instance.AddItem(itemForPlacement.name);
         }
@@ -47,14 +46,11 @@ public class PlaceItemQuest : MonoSingleton<PlaceItemQuest> {
 
     public void EndQuest() {
         isEnd = true;
-        MonologManager.instance.SetText(endMessage, 2.0f);
+        MonologManager.instance.SetText(endMessage, "UncleVoEndQuest");
     }
 
     public void NextMonolog() {
-        var voice = Stem.SoundManager.GrabSound("Monolog0");
-        var voiceSettings = Stem.SoundManager.GetSound("Monolog0");
-        voice.Play();
-        MonologManager.instance.SetText(wildMonologs[nextMonologInd], voice.Sound.Variations[0].Clip.length);
+        MonologManager.instance.SetText(wildMonologs[nextMonologInd], "UncleVoMonolog" + nextMonologInd.ToString());
         nextMonologInd++;
         nextMonologInd = nextMonologInd == wildMonologs.Length ? 0 : nextMonologInd;
     }

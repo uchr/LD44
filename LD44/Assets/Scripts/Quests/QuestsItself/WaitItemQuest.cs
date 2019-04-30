@@ -27,26 +27,27 @@ public class WaitItemQuest : MonoSingleton<WaitItemQuest> {
             isComplete = true;
 
         if (!isComplete) {
-            MonologManager.instance.SetText(completePart[completePartInd], 2.0f);
+            MonologManager.instance.SetText(completePart[completePartInd], "DittoPart" + completePartInd.ToString());
             completePartInd++;
             completePartInd = completePartInd == wildMonologs.Length ? 0 : completePartInd;
         }
         else {
-            MonologManager.instance.SetText(completeMessage, 2.0f);
+            QuestManager.instance.EndQuest(QuestType.Wait);
         }
     }
 
     public void StartQuest() {
-        MonologManager.instance.SetText(startMessage, 1.5f);
+        MonologManager.instance.SetText(startMessage, "DittoStartQuest");
     }
 
     public void EndQuest() {
         isEnd = true;
-        MonologManager.instance.SetText(endMessage, 2.0f);
+        MonologManager.instance.SetText(endMessage, "DittoEndQuest");
+
     }
 
     public void NextMonolog() {
-        MonologManager.instance.SetText(wildMonologs[nextMonologInd], 2.0f);
+        MonologManager.instance.SetText(wildMonologs[nextMonologInd], "DittoMonolog" + nextMonologInd.ToString());
         nextMonologInd++;
         nextMonologInd = nextMonologInd == wildMonologs.Length ? 0 : nextMonologInd;
     }

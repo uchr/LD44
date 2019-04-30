@@ -42,29 +42,29 @@ public class CollectItemsQuest : MonoSingleton<CollectItemsQuest> {
         isComplete = check;
 
         if (!isComplete) {
-            MonologManager.instance.SetText(completePart[completePartInd], 2.0f);
+            MonologManager.instance.SetText(completePart[completePartInd], "VitaPart" + completePartInd.ToString());
             completePartInd++;
             completePartInd = completePartInd == wildMonologs.Length ? 0 : completePartInd;
         }
         else {
-            MonologManager.instance.SetText(completeMessage, 2.0f);
+            MonologManager.instance.SetText(completeMessage, "VitaCompleteQuest");
         }
     }
 
     public void StartQuest() {
-        MonologManager.instance.SetText(startMessage, 2.0f);
+        MonologManager.instance.SetText(startMessage, "VitaStartQuest");
     }
 
     public void EndQuest() {
         isEnd = true;
-        MonologManager.instance.SetText(endMessage, 2.0f);
+        MonologManager.instance.SetText(endMessage, "VitaEndQuest");
         Inventory.instance.RemoveItem("Detail0");
         Inventory.instance.RemoveItem("Detail1");
         Inventory.instance.RemoveItem("Detail2");
     }
 
     public void NextMonolog() {
-        MonologManager.instance.SetText(wildMonologs[nextMonologInd], 2.0f);
+        MonologManager.instance.SetText(wildMonologs[nextMonologInd], "VitaMonolog" + nextMonologInd.ToString());
         nextMonologInd++;
         nextMonologInd = nextMonologInd == wildMonologs.Length ? 0 : nextMonologInd;
     }

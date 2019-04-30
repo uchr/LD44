@@ -9,10 +9,19 @@ public class MonologManager : MonoSingleton<MonologManager> {
     public TextMeshProUGUI message;
 
     private float timer;
+    private Stem.SoundInstance curVoice = null;
 
-    public void SetText(string text, float time) {
+    public void SetText(string text, string voiceName) {
+        if (curVoice != null) {
+            curVoice.Stop();
+            curVoice = null;
+        }
+
         isActive = true;
-        timer = time;
+
+        curVoice = Stem.SoundManager.GrabSound(voiceName);
+        curVoice.Play();
+        timer = curVoice.Sound.Variations[0].Clip.length;
         panel.SetActive(true);
         message.text = text;
     }
@@ -29,6 +38,10 @@ public class MonologManager : MonoSingleton<MonologManager> {
         if (timer > 0.0f) {
             timer -= Time.deltaTime;
             if (timer <= 0.0f) {
+                if (curVoice != null) {
+                    curVoice.Stop();
+                    curVoice = null;
+                }
                 HideText();
             }
         }

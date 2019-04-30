@@ -33,18 +33,47 @@ public class NPC : MonoBehaviour {
         if (QuestManager.instance.currentQuest == QuestType.None) {
             if (!QuestManager.instance.CheckEnd(questType))
                 QuestManager.instance.StartQuest(questType);
-            else
-                MonologManager.instance.SetText("You're doing fine. Lets help other", 2.5f);
+            else {
+                switch (questType) {
+                    case QuestType.Place:
+                        MonologManager.instance.SetText("It is done! Run to the twins, some measurements and a couple of details will bring our rocket to life.", "UncleVoAlreadyEndQuest");
+                    break;
+                    case QuestType.Collect:
+                        MonologManager.instance.SetText("I almost printed out all the parts of the rocket. Soon she will be ready. Help Ditto.", "VitaAlreadyEndQuest");
+                    break;
+                }
+            }
         }
         else {
             if (QuestManager.instance.currentQuest == questType) {
                 if (QuestManager.instance.CheckComplete(questType))
                     QuestManager.instance.EndQuest(questType);
-                else
-                    MonologManager.instance.SetText("Lets do it", 2.5f);
+                else {
+                    switch (questType) {
+                        case QuestType.Wait:
+                            MonologManager.instance.SetText("I believe that you can handle it. Just do it.", "DittoContinueQuest");
+                            break;
+                        case QuestType.Place:
+                            MonologManager.instance.SetText("I believe that you can handle it. Just do it.", "UncleVoContinueQuest");
+                            break;
+                        case QuestType.Collect:
+                            MonologManager.instance.SetText("I believe that you can handle it. Just do it.", "VitaContinute");
+                            break;
+                    }
+                }
             }
             else {
-                MonologManager.instance.SetText("Complete another quest and get back", 2.5f);
+                switch (questType) {
+                    case QuestType.Wait:
+                        MonologManager.instance.SetText("Uncle Wo needs you now, check me out when you finish his task.", "DittoNotReadu");
+                        break;
+                    case QuestType.Place:
+                        MonologManager.instance.SetText("Come back when other things are done.", "UncleVoAnotherQuest");
+                        break;
+                    case QuestType.Collect:
+                        MonologManager.instance.SetText("Come back when other things are done.", "VitaAlreadyQuest");
+                        break;
+                }
             }
         }
     }
