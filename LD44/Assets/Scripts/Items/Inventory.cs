@@ -49,6 +49,11 @@ public class Inventory : MonoSingleton<Inventory> {
 
         if (items[itemName] <= 0)
             items.Remove(itemName);
+
+        listOfItems.text = "<b>ITEMS<b>\n";
+        foreach (var item in items) {
+            listOfItems.text += "<b>" + item.Key + ":</b> " + item.Value.ToString() + "\n";
+        }
         
         removeItem.Invoke(itemName, count);
     }
