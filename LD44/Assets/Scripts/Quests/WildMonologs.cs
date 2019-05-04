@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WildMonologs : MonoBehaviour {
-    public float requiredTime = 0.5f;
+    public float pauseTime = 5.0f;
 
-    public float timeFromLastSpeach = 0.0f;
+    private float timeFromLastSpeach = 0.0f;
 
     private void Update() {
         bool isActiveQuest = QuestManager.instance.currentQuest != QuestType.None;
@@ -13,7 +13,7 @@ public class WildMonologs : MonoBehaviour {
         bool isMonolog = MonologManager.instance.isActive;
         if (isActiveQuest && playerInTheWild && !isMonolog) {
             timeFromLastSpeach += Time.deltaTime;
-            if (timeFromLastSpeach >= requiredTime) {
+            if (timeFromLastSpeach >= pauseTime) {
                 QuestManager.instance.NextMonolog();
             }
         }

@@ -8,6 +8,9 @@ public class MonologManager : MonoSingleton<MonologManager> {
     public GameObject panel;
     public TextMeshProUGUI message;
 
+    [Header("State")]
+    public float lengthFactor = 1.2f;
+
     private float timer;
     private Stem.SoundInstance curVoice = null;
 
@@ -21,7 +24,7 @@ public class MonologManager : MonoSingleton<MonologManager> {
 
         curVoice = Stem.SoundManager.GrabSound(voiceName);
         curVoice.Play();
-        timer = curVoice.Sound.Variations[0].Clip.length;
+        timer = curVoice.Sound.Variations[0].Clip.length * lengthFactor;
         panel.SetActive(true);
         message.text = text;
     }
