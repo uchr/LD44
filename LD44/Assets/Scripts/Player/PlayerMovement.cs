@@ -81,7 +81,7 @@ public class PlayerMovement : MonoBehaviour {
                     backward.transform.localPosition = new Vector3(0.741f, 0.903f, -0.082f);
                 }
                 else {
-                    backward.transform.localPosition = new Vector3(0.779f, 0f, -0.091f);
+                    backward.transform.localPosition = new Vector3(1.06f, 0f, -0.24f);
                 }
                 forward.SetActive(false);
                 side.SetActive(false);
@@ -91,12 +91,13 @@ public class PlayerMovement : MonoBehaviour {
             case Dir.Right:
                 if (isWild) {
                     side.transform.localPosition = new Vector3(0.796f, 1.3f, 0.435f);
+                    side.transform.localScale = new Vector3(0.34438f, 0.34438f, 0.34438f);
                 }
                 else {
-                    side.transform.localPosition = new Vector3(0.901f, 0f, 0.607f);
+                    side.transform.localPosition = new Vector3(1.3f, 0, 0.9f);
+                    side.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
                 }
 
-                side.transform.localScale = new Vector3(0.3443782f, 0.3443782f, 0.3443782f);
                 forward.SetActive(false);
                 side.SetActive(true);
                 backward.SetActive(false);
@@ -105,12 +106,13 @@ public class PlayerMovement : MonoBehaviour {
             case Dir.Left:
                 if (isWild) {
                     side.transform.localPosition = new Vector3(-0.844f, 1.3f, 0.435f);
+                    side.transform.localScale = new Vector3(-0.34438f, 0.34438f, 0.34438f);
                 }
                 else {
-                    side.transform.localPosition = new Vector3(-0.836f, 0, 0.607f);
+                    side.transform.localPosition = new Vector3(-1.3f, 0, 0.9f);
+                    side.transform.localScale = new Vector3(-0.5f, 0.5f, 0.5f);
                 }
-                
-                side.transform.localScale = new Vector3(-0.3443782f, 0.3443782f, 0.3443782f);
+
                 forward.SetActive(false);
                 side.SetActive(true);
                 backward.SetActive(false);
