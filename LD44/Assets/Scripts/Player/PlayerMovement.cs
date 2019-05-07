@@ -61,6 +61,9 @@ public class PlayerMovement : MonoBehaviour {
             dir = Dir.Left;
         }
 
+        if (dir != Dir.None)
+            Stem.SoundManager.Play("StepGrass");
+
         switch (dir) {
             case Dir.None:
                 animatorForward.SetBool("walk", false);
