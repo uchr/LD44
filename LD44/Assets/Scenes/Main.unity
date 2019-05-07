@@ -61048,7 +61048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 669d7cfe3cbf3044eb94c9ee1d0256fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseTime: 5
+  pauseTime: 4
 --- !u!1 &956367875
 GameObject:
   m_ObjectHideFlags: 0
