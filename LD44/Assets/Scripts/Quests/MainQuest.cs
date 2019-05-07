@@ -11,7 +11,7 @@ public class MainQuest : MonoBehaviour {
     public GameObject[] npc;
 
     public void Start() {
-        MonologManager.instance.SetText("Wake up! It's begun! We were preparing for this but everything went wrong. I'm waiting for you in my bunker.", "Begin");
+        MonologManager.instance.SetText("Wake up. It's started. As agreed: meet in our bunkers.", "DittoStartMainQuest");
         Stem.MusicManager.Play("Music");
     }
 

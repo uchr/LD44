@@ -36,7 +36,7 @@ public class NPC : MonoBehaviour {
                     QuestManager.instance.StartQuest(questType);
                 }
                 else {
-                    MonologManager.instance.SetText("Uncle Wo needs you now, check me out when you finish his task.", "DittoNotReadu");
+                    MonologManager.instance.SetText("Uncle Wo and my sister needs you now, check me out when you finish his task.", "DittoUncompleteQuest");
                 }
             }
             else {
@@ -48,7 +48,7 @@ public class NPC : MonoBehaviour {
                             MonologManager.instance.SetText("It is done! Run to the twins, some measurements and a couple of details will bring our rocket to life.", "UncleVoAlreadyEndQuest");
                         break;
                         case QuestType.Collect:
-                            MonologManager.instance.SetText("I almost printed out all the parts of the rocket. Soon she will be ready. Help Ditto.", "VitaAlreadyEndQuest");
+                            MonologManager.instance.SetText("I almost printed out all 3 seats, the engine and the hull for the rocket. It'll be ready soon. Help Ditto.", "VitaAlreadyEndQuest");
                         break;
                     }
                 }
@@ -61,13 +61,13 @@ public class NPC : MonoBehaviour {
                 else {
                     switch (questType) {
                         case QuestType.Wait:
-                            MonologManager.instance.SetText("I believe that you can handle it. Just do it.", "DittoContinueQuest");
+                            MonologManager.instance.SetText("I believe you can do it. Just go and do it.", "DittoQuestInProgress");
                             break;
                         case QuestType.Place:
-                            MonologManager.instance.SetText("I believe that you can handle it. Just do it.", "UncleVoContinueQuest");
+                            MonologManager.instance.SetText("I believe you can do it. Just go and do it.", "UncleVoQuestInProgress");
                             break;
                         case QuestType.Collect:
-                            MonologManager.instance.SetText("I believe that you can handle it. Just do it.", "VitaContinute");
+                            MonologManager.instance.SetText("I believe you can do it. Just go and do it.", "VitaQuestInProgress");
                             break;
                     }
                 }
@@ -75,13 +75,13 @@ public class NPC : MonoBehaviour {
             else {
                 switch (questType) {
                     case QuestType.Wait:
-                        MonologManager.instance.SetText("Uncle Wo needs you now, check me out when you finish his task.", "DittoNotReadu");
+                        MonologManager.instance.SetText("Uncle Wo and my sister needs you now, check me out when you finish his task.", "DittoUncompleteQuest");
                         break;
                     case QuestType.Place:
-                        MonologManager.instance.SetText("Come back when other things are done.", "UncleVoAnotherQuest");
+                        MonologManager.instance.SetText("Come back when other tasks are done.", "UncleVoHaveAnotherQuest");
                         break;
                     case QuestType.Collect:
-                        MonologManager.instance.SetText("Come back when other things are done.", "VitaAlreadyQuest");
+                        MonologManager.instance.SetText("Come back when other tasks are done.", "VitaHaveAnotherQuest");
                         break;
                 }
             }

@@ -1,0 +1,305 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4fa00304a536a34a832759c4a737c14, type: 3}
+  m_Name: BunkerDittoBank
+  m_EditorClassIdentifier: 
+  soundBatchImportMode: 0
+  showSounds: 1
+  showSoundBuses: 1
+  sounds:
+  - name: BunkerDittoEndQuest
+    muted: 0
+    soloed: 0
+    unfolded: 0
+    panStereo: 0
+    spatialBlend: 0
+    attenuationMode: 0
+    spread: 0
+    dopplerLevel: 1
+    minDistance: 1
+    maxDistance: 500
+    variationRetriggerMode: 2
+    variations:
+    - clip: {fileID: 8300000, guid: 5d1eb8377514b7d49aae0616fff1c121, type: 3}
+      fixedVolume: 1
+      fixedPitch: 1
+      fixedDelay: 0
+      randomizeVolume: 0
+      randomizePitch: 0
+      randomizeDelay: 0
+      randomVolumeRange: {x: 1, y: 1}
+      randomPitchRange: {x: 1, y: 1}
+      randomDelayRange: {x: 0, y: 0}
+  - name: BunkerDittoMonolog0
+    muted: 0
+    soloed: 0
+    unfolded: 0
+    panStereo: 0
+    spatialBlend: 0
+    attenuationMode: 0
+    spread: 0
+    dopplerLevel: 1
+    minDistance: 1
+    maxDistance: 500
+    variationRetriggerMode: 2
+    variations:
+    - clip: {fileID: 8300000, guid: 8c5752aef2146b54caaab1d6f11673e9, type: 3}
+      fixedVolume: 1
+      fixedPitch: 1
+      fixedDelay: 0
+      randomizeVolume: 0
+      randomizePitch: 0
+      randomizeDelay: 0
+      randomVolumeRange: {x: 1, y: 1}
+      randomPitchRange: {x: 1, y: 1}
+      randomDelayRange: {x: 0, y: 0}
+  - name: BunkerDittoMonolog1
+    muted: 0
+    soloed: 0
+    unfolded: 0
+    panStereo: 0
+    spatialBlend: 0
+    attenuationMode: 0
+    spread: 0
+    dopplerLevel: 1
+    minDistance: 1
+    maxDistance: 500
+    variationRetriggerMode: 2
+    variations:
+    - clip: {fileID: 8300000, guid: 88701c7da42150e4b94e0481840d9a3d, type: 3}
+      fixedVolume: 1
+      fixedPitch: 1
+      fixedDelay: 0
+      randomizeVolume: 0
+      randomizePitch: 0
+      randomizeDelay: 0
+      randomVolumeRange: {x: 1, y: 1}
+      randomPitchRange: {x: 1, y: 1}
+      randomDelayRange: {x: 0, y: 0}
+  - name: BunkerDittoMonolog2
+    muted: 0
+    soloed: 0
+    unfolded: 0
+    panStereo: 0
+    spatialBlend: 0
+    attenuationMode: 0
+    spread: 0
+    dopplerLevel: 1
+    minDistance: 1
+    maxDistance: 500
+    variationRetriggerMode: 2
+    variations:
+    - clip: {fileID: 8300000, guid: 4adaad01c9b0860408215c7edda7b787, type: 3}
+      fixedVolume: 1
+      fixedPitch: 1
+      fixedDelay: 0
+      randomizeVolume: 0
+      randomizePitch: 0
+      randomizeDelay: 0
+      randomVolumeRange: {x: 1, y: 1}
+      randomPitchRange: {x: 1, y: 1}
+      randomDelayRange: {x: 0, y: 0}
+  - name: BunkerDittoMonolog3
+    muted: 0
+    soloed: 0
+    unfolded: 0
+    panStereo: 0
+    spatialBlend: 0
+    attenuationMode: 0
+    spread: 0
+    dopplerLevel: 1
+    minDistance: 1
+    maxDistance: 500
+    variationRetriggerMode: 2
+    variations:
+    - clip: {fileID: 8300000, guid: 16bb192c77e42db4797eeb92eafc4aea, type: 3}
+      fixedVolume: 1
+      fixedPitch: 1
+      fixedDelay: 0
+      randomizeVolume: 0
+      randomizePitch: 0
+      randomizeDelay: 0
+      randomVolumeRange: {x: 1, y: 1}
+      randomPitchRange: {x: 1, y: 1}
+      randomDelayRange: {x: 0, y: 0}
+  - name: BunkerDittoPart0
+    muted: 0
+    soloed: 0
+    unfolded: 0
+    panStereo: 0
+    spatialBlend: 0
+    attenuationMode: 0
+    spread: 0
+    dopplerLevel: 1
+    minDistance: 1
+    maxDistance: 500
+    variationRetriggerMode: 2
+    variations:
+    - clip: {fileID: 8300000, guid: 09002214278c5f84b8d168b6ff27f174, type: 3}
+      fixedVolume: 1
+      fixedPitch: 1
+      fixedDelay: 0
+      randomizeVolume: 0
+      randomizePitch: 0
+      randomizeDelay: 0
+      randomVolumeRange: {x: 1, y: 1}
+      randomPitchRange: {x: 1, y: 1}
+      randomDelayRange: {x: 0, y: 0}
+  - name: BunkerDittoPart1
+    muted: 0
+    soloed: 0
+    unfolded: 0
+    panStereo: 0
+    spatialBlend: 0
+    attenuationMode: 0
+    spread: 0
+    dopplerLevel: 1
+    minDistance: 1
+    maxDistance: 500
+    variationRetriggerMode: 2
+    variations:
+    - clip: {fileID: 8300000, guid: 06681a4072e992d4c8b606c9d59ab271, type: 3}
+      fixedVolume: 1
+      fixedPitch: 1
+      fixedDelay: 0
+      randomizeVolume: 0
+      randomizePitch: 0
+      randomizeDelay: 0
+      randomVolumeRange: {x: 1, y: 1}
+      randomPitchRange: {x: 1, y: 1}
+      randomDelayRange: {x: 0, y: 0}
+  - name: BunkerDittoPart2
+    muted: 0
+    soloed: 0
+    unfolded: 0
+    panStereo: 0
+    spatialBlend: 0
+    attenuationMode: 0
+    spread: 0
+    dopplerLevel: 1
+    minDistance: 1
+    maxDistance: 500
+    variationRetriggerMode: 2
+    variations:
+    - clip: {fileID: 8300000, guid: cd6cdd000b2bad54eb74d69929890106, type: 3}
+      fixedVolume: 1
+      fixedPitch: 1
+      fixedDelay: 0
+      randomizeVolume: 0
+      randomizePitch: 0
+      randomizeDelay: 0
+      randomVolumeRange: {x: 1, y: 1}
+      randomPitchRange: {x: 1, y: 1}
+      randomDelayRange: {x: 0, y: 0}
+  - name: BunkerDittoQuestInProgress
+    muted: 0
+    soloed: 0
+    unfolded: 0
+    panStereo: 0
+    spatialBlend: 0
+    attenuationMode: 0
+    spread: 0
+    dopplerLevel: 1
+    minDistance: 1
+    maxDistance: 500
+    variationRetriggerMode: 2
+    variations:
+    - clip: {fileID: 8300000, guid: 7d08b421bdaa2714dae34c0e29e7a365, type: 3}
+      fixedVolume: 1
+      fixedPitch: 1
+      fixedDelay: 0
+      randomizeVolume: 0
+      randomizePitch: 0
+      randomizeDelay: 0
+      randomVolumeRange: {x: 1, y: 1}
+      randomPitchRange: {x: 1, y: 1}
+      randomDelayRange: {x: 0, y: 0}
+  - name: BunkerDittoStartQuest
+    muted: 0
+    soloed: 0
+    unfolded: 0
+    panStereo: 0
+    spatialBlend: 0
+    attenuationMode: 0
+    spread: 0
+    dopplerLevel: 1
+    minDistance: 1
+    maxDistance: 500
+    variationRetriggerMode: 2
+    variations:
+    - clip: {fileID: 8300000, guid: 700559e16571f3f4cac5119d981f44c9, type: 3}
+      fixedVolume: 1
+      fixedPitch: 1
+      fixedDelay: 0
+      randomizeVolume: 0
+      randomizePitch: 0
+      randomizeDelay: 0
+      randomVolumeRange: {x: 1, y: 1}
+      randomPitchRange: {x: 1, y: 1}
+      randomDelayRange: {x: 0, y: 0}
+  - name: BunkerDittoUncompleteQuest
+    muted: 0
+    soloed: 0
+    unfolded: 0
+    panStereo: 0
+    spatialBlend: 0
+    attenuationMode: 0
+    spread: 0
+    dopplerLevel: 1
+    minDistance: 1
+    maxDistance: 500
+    variationRetriggerMode: 2
+    variations:
+    - clip: {fileID: 8300000, guid: 1e8a048f362303645be78d47d2263e93, type: 3}
+      fixedVolume: 1
+      fixedPitch: 1
+      fixedDelay: 0
+      randomizeVolume: 0
+      randomizePitch: 0
+      randomizeDelay: 0
+      randomVolumeRange: {x: 1, y: 1}
+      randomPitchRange: {x: 1, y: 1}
+      randomDelayRange: {x: 0, y: 0}
+  - name: BunkerDittoStartMainQuest
+    muted: 0
+    soloed: 0
+    unfolded: 0
+    panStereo: 0
+    spatialBlend: 0
+    attenuationMode: 0
+    spread: 0
+    dopplerLevel: 1
+    minDistance: 1
+    maxDistance: 500
+    variationRetriggerMode: 2
+    variations:
+    - clip: {fileID: 8300000, guid: a833ad68540c4a0468061dd236cfda1c, type: 3}
+      fixedVolume: 1
+      fixedPitch: 1
+      fixedDelay: 0
+      randomizeVolume: 0
+      randomizePitch: 0
+      randomizeDelay: 0
+      randomVolumeRange: {x: 1, y: 1}
+      randomPitchRange: {x: 1, y: 1}
+      randomDelayRange: {x: 0, y: 0}
+  buses:
+  - name: Master
+    muted: 0
+    soloed: 0
+    mixerGroup: {fileID: -215923380102147429, guid: e4bc313001c993c4793b1c0c04ad8678,
+      type: 2}
+    volume: 1
+    polyphony: 1
+    unfolded: 1
+    allowVoiceStealing: 1
+  busIndices: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
