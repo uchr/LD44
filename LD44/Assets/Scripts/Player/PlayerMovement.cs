@@ -48,16 +48,16 @@ public class PlayerMovement : MonoBehaviour {
 
         if (idleEnabled)
             dir = Dir.None;
-        if (Input.GetKey(KeyCode.S)) {
+        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) {
             dir = Dir.Forward;
         }
-        if (Input.GetKey(KeyCode.W)) {
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) {
             dir = Dir.Backward;
         }
-        if (Input.GetKey(KeyCode.D)) {
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) {
             dir = Dir.Right;
         }
-        if (Input.GetKey(KeyCode.A)) {
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) {
             dir = Dir.Left;
         }
 
