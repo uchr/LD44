@@ -7,6 +7,7 @@ public class MainQuest : MonoBehaviour {
     public bool isEnd = false;
 
     [Header("Final objects")]
+    public GameObject burnedPlace;
     public GameObject rocket;
     public GameObject[] npc;
 
@@ -21,6 +22,7 @@ public class MainQuest : MonoBehaviour {
             CollectItemsQuest.instance.isEnd && !isEnd) {
             isEnd = true;
 
+            burnedPlace.SetActive(true);
             rocket.SetActive(false);
             foreach (var go in npc)
                 go.SetActive(false);
