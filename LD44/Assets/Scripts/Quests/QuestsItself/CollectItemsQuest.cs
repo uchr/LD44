@@ -12,12 +12,9 @@ public class CollectItemsQuest : MonoSingleton<CollectItemsQuest> {
     public List<string> requiredItems;
     public GameObject[] detailsObject;
 
-    [Header("Dialogs")]
-    public string startMessage;
-    public string[] wildMonologs;
-    public string[] completePart;
-    public string completeMessage;
-    public string endMessage;
+    [Header("DialogsSettings")]
+    public int wildMonologsCount;
+    public int completePartCount;
 
     private int nextMonologInd = 0;
     private int completePartInd = 0;
@@ -49,7 +46,7 @@ public class CollectItemsQuest : MonoSingleton<CollectItemsQuest> {
         if (!isComplete) {
             MonologManager.instance.PlayReplica(character, "Part" + completePartInd.ToString());
             completePartInd++;
-            completePartInd = completePartInd == wildMonologs.Length ? 0 : completePartInd;
+            completePartInd = completePartInd == completePartCount ? 0 : completePartInd;
         }
         else {
             MonologManager.instance.PlayReplica(character, "CompleteQuest");
@@ -73,6 +70,6 @@ public class CollectItemsQuest : MonoSingleton<CollectItemsQuest> {
     public void NextMonolog() {
         MonologManager.instance.PlayReplica(character, "Monolog" + nextMonologInd.ToString());
         nextMonologInd++;
-        nextMonologInd = nextMonologInd == wildMonologs.Length ? 0 : nextMonologInd;
+        nextMonologInd = nextMonologInd == wildMonologsCount ? 0 : nextMonologInd;
     }
 }

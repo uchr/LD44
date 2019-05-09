@@ -14,10 +14,8 @@ public class WaitItemQuest : MonoSingleton<WaitItemQuest> {
     public GameObject[] placesToWait;
 
     [Header("Dialogs")]
-    public string startMessage;
-    public string[] wildMonologs;
-    public string[] completePart;
-    public string endMessage;
+    public int wildMonologsCount;
+    public int completePartCount;
 
     private int nextMonologInd = 0;
     private int completePartInd = 0;
@@ -35,7 +33,7 @@ public class WaitItemQuest : MonoSingleton<WaitItemQuest> {
         if (!isComplete) {
             MonologManager.instance.PlayReplica(character, "Part" + completePartInd.ToString());
             completePartInd++;
-            completePartInd = completePartInd == wildMonologs.Length ? 0 : completePartInd;
+            completePartInd = completePartInd == completePartCount ? 0 : completePartInd;
         }
         else {
             QuestManager.instance.EndQuest(QuestType.Wait);
@@ -58,6 +56,6 @@ public class WaitItemQuest : MonoSingleton<WaitItemQuest> {
     public void NextMonolog() {
         MonologManager.instance.PlayReplica(character, "Monolog" + nextMonologInd.ToString());
         nextMonologInd++;
-        nextMonologInd = nextMonologInd == wildMonologs.Length ? 0 : nextMonologInd;
+        nextMonologInd = nextMonologInd == wildMonologsCount ? 0 : nextMonologInd;
     }
 }
