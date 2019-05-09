@@ -20,7 +20,8 @@ public class MonologManager : MonoSingleton<MonologManager> {
 
     [Header("Settings")]
     public float lengthFactor = 1.2f;
-    public bool wildState;
+    public CharacterType replicaCharachter;
+    public bool currentRadioMode = false;
 
     [Header("Timers")]
     public float noiseTimer;
@@ -56,10 +57,11 @@ public class MonologManager : MonoSingleton<MonologManager> {
             return;
         }
 
+        replicaCharachter = character;
         SetText(replica.text, character.ToString() + replica.key);
     }
 
-    private void SetText(string text, string voiceName) {
+    private void SetText(string text, string voiceKey) {
         if (curBunkerVoice != null) {
             curBunkerVoice.Stop();
             curBunkerVoice = null;
@@ -72,13 +74,13 @@ public class MonologManager : MonoSingleton<MonologManager> {
 
         isActive = true;
 
-        curBunkerVoice = Stem.SoundManager.GrabSound("Bunker" + voiceName);
-        curRadioVoice = Stem.SoundManager.GrabSound("Radio" + voiceName);
+        curBunkerVoice = Stem.SoundManager.GrabSound("Bunker" + voiceKey);
+        curRadioVoice = Stem.SoundManager.GrabSound("Radio" + voiceKey);
 
-        bool playerInTheWild = PlayerState.instance.inTheWild;
-        wildState = playerInTheWild;
-        noiseTimer = playerInTheWild ? 0.5f : -0.5f;
-        if (playerInTheWild) {
+        bool inTheWild = PlayerState.instance.inTheWild;
+        currentRadioMode = inTheWild || (!inTheWild && PlayerState.instance.currentBunker != replicaCharachter);
+        noiseTimer = currentRadioMode ? 0.5f : -0.5f;
+        if (currentRadioMode) {
             Stem.SoundManager.Play("LoudNoise");
             mixer.FindSnapshot("Radio").TransitionTo(0.0f);
         }
@@ -99,11 +101,12 @@ public class MonologManager : MonoSingleton<MonologManager> {
     }
 
     private void Update() {
-        bool playerInTheWild = PlayerState.instance.inTheWild;
+        bool inTheWild = PlayerState.instance.inTheWild;
+        bool radioMode = inTheWild || (!inTheWild && PlayerState.instance.currentBunker != replicaCharachter);
         if (isActive) {
-            if (wildState != playerInTheWild) {
-                wildState = playerInTheWild;
-                if (playerInTheWild) {
+            if (currentRadioMode != radioMode) {
+                currentRadioMode = radioMode;
+                if (currentRadioMode) {
                     mixer.FindSnapshot("Radio").TransitionTo(0.2f);
                     quietNoise.Play();
                 }
@@ -125,7 +128,8 @@ public class MonologManager : MonoSingleton<MonologManager> {
                 if (curBunkerVoice != null) {
                     curBunkerVoice.Play();
                     curRadioVoice.Play();
-                    quietNoise.Play();
+                    if (currentRadioMode)
+                        quietNoise.Play();
                 }
             }
         }
@@ -135,9 +139,9 @@ public class MonologManager : MonoSingleton<MonologManager> {
             if (timer <= 0.0f) {
                 Stop();
 
-                if (playerInTheWild)
+                if (currentRadioMode)
                     Stem.SoundManager.Play("LoudNoise");
-                noiseTimer = playerInTheWild ? 0.5f : -0.5f;
+                noiseTimer = currentRadioMode ? 0.5f : -0.5f;
             }
         }
 
