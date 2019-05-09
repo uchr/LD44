@@ -41,13 +41,12 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     private void Update() {
-        if (Input.GetKey(KeyCode.LeftShift))
-            speed = fastSpeed;
-        else 
-            speed = normalSpeed;
+        if (MainQuest.instance.isEnd)
+            return;
 
         if (idleEnabled)
             dir = Dir.None;
+
         if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) {
             dir = Dir.Forward;
         }
@@ -60,6 +59,11 @@ public class PlayerMovement : MonoBehaviour {
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) {
             dir = Dir.Left;
         }
+
+        if (Input.GetKey(KeyCode.LeftShift))
+            speed = fastSpeed;
+        else 
+            speed = normalSpeed;
 
         if (dir != Dir.None)
             Stem.SoundManager.Play("StepGrass");

@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaitTrigger : MonoBehaviour
-{
+public class WaitTrigger : MonoBehaviour {
     public bool isActive = false;
 
     private float waitTime = 0.0f;
@@ -46,5 +45,4 @@ public class WaitTrigger : MonoBehaviour
         WaitItemQuest.instance.Scan();
         Destroy(gameObject);
     }
-
 }

@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlaceItemTrigger : MonoBehaviour
-{
+public class PlaceItemTrigger : MonoBehaviour {
     public bool isActive = false;
 
     private float waitTime = 0.0f;
@@ -47,5 +46,4 @@ public class PlaceItemTrigger : MonoBehaviour
         GameObject.Instantiate(PlaceItemQuest.instance.itemForPlacement, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
-
 }
