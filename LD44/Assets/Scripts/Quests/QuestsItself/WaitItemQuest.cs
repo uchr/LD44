@@ -8,6 +8,7 @@ public class WaitItemQuest : MonoSingleton<WaitItemQuest> {
     public bool isEnd = false;
 
     [Header("Settings")]
+    public CharacterType character;
     public int count = 2;
     public float timeToWait = 3.0f;
     public GameObject[] placesToWait;
@@ -32,7 +33,7 @@ public class WaitItemQuest : MonoSingleton<WaitItemQuest> {
             isComplete = true;
 
         if (!isComplete) {
-            MonologManager.instance.SetText(completePart[completePartInd], "DittoPart" + completePartInd.ToString());
+            MonologManager.instance.PlayReplica(character, "Part" + completePartInd.ToString());
             completePartInd++;
             completePartInd = completePartInd == wildMonologs.Length ? 0 : completePartInd;
         }
@@ -42,7 +43,7 @@ public class WaitItemQuest : MonoSingleton<WaitItemQuest> {
     }
 
     public void StartQuest() {
-        MonologManager.instance.SetText(startMessage, "DittoStartQuest");
+        MonologManager.instance.PlayReplica(character, "StartQuest");
 
         foreach (var go in placesToWait)
             go.SetActive(true);
@@ -50,12 +51,12 @@ public class WaitItemQuest : MonoSingleton<WaitItemQuest> {
 
     public void EndQuest() {
         isEnd = true;
-        MonologManager.instance.SetText(endMessage, "DittoEndQuest");
+        MonologManager.instance.PlayReplica(character, "EndQuest");
 
     }
 
     public void NextMonolog() {
-        MonologManager.instance.SetText(wildMonologs[nextMonologInd], "DittoMonolog" + nextMonologInd.ToString());
+        MonologManager.instance.PlayReplica(character, "Monolog" + nextMonologInd.ToString());
         nextMonologInd++;
         nextMonologInd = nextMonologInd == wildMonologs.Length ? 0 : nextMonologInd;
     }

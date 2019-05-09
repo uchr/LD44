@@ -2,6 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class #SCRIPTNAME# : MonoBehaviour {
+public class #SCRIPTNAME# : ScriptableObject {
     
 }

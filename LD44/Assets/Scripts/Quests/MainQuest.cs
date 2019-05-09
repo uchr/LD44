@@ -16,7 +16,7 @@ public class MainQuest : MonoBehaviour {
 
     public void Start() {
         if (!disableStartSound) {
-            MonologManager.instance.SetText("Wake up. It's started. As agreed: meet in our bunkers.", "DittoStartMainQuest");
+            MonologManager.instance.PlayReplica(CharacterType.Ditto, "StartMainQuest");
             Stem.MusicManager.Play("Music");
         }
     }

@@ -12,7 +12,7 @@ public class PlayerState : MonoSingleton<PlayerState> {
 
     [Header("State")]
     public bool inTheWild = false;
-    public Character currentBunker;
+    public CharacterType currentBunker;
 
     [Header("UI")]
     public UI.Slider hpBar;

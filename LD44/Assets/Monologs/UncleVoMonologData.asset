@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6896ad60bf96754f9ed6279147f965b, type: 3}
+  m_Name: UncleVoMonologData
+  m_EditorClassIdentifier: 
+  character: 2
+  replics:
+  - key: StartQuest
+    text: Grab the antenna, we need to make some measurements. I'll tell you on the
+      way.
+    voiceKey: UncleVoStartQuest
+  - key: Monolog0
+    text: First, place the antennas around our rocket. You know, that little rocket
+      we're gonna fix and get out of this hole.
+    voiceKey: UncleVoMonolog0
+  - key: Monolog1
+    text: Be careful, the atmosphere is contaminated. If I were you, I would not take
+      long walks. You can die
+    voiceKey: UncleVoMonolog1
+  - key: Monolog2
+    text: Of course, we knew that the world would soon explode, but I thought it would
+      be ... well, you know ... politics, and not some crazy farmer.
+    voiceKey: UncleVoMonolog2
+  - key: Monolog3
+    text: Previously, I also had my own vegetable garden, but I did not grow vegetables
+      on uranium.
+    voiceKey: UncleVoMonolog3
+  - key: Monolog4
+    text: But I'd still eat pumpkin pie.
+    voiceKey: UncleVoMonolog4
+  - key: Monolog5
+    text: Are you placing or drooling?
+    voiceKey: UncleVoMonolog5
+  - key: EndQuest
+    text: It is done! Run to the twins, some measurements and a couple of details
+      will bring our rocket to life.
+    voiceKey: UncleVoEndQuest
+  - key: Part0
+    text: I see the first radar on the horizon!
+    voiceKey: UncleVoPart0
+  - key: Part1
+    text: That's a joke. I'm in the bunker. But I see them on the screen
+    voiceKey: UncleVoPart1
+  - key: Part2
+    text: I hope they will be able to work in automatic mode
+    voiceKey: UncleVoPart2
+  - key: AlreadyEndQuest
+    text: It is done! Run to the twins, some measurements and a couple of details
+      will bring our rocket to life.
+    voiceKey: Key
+  - key: QuestInProgress
+    text: I believe you can do it. Just go and do it.
+    voiceKey: UncleVoQuestInProgress
+  - key: HaveAnotherQuest
+    text: Come back when other tasks are done.
+    voiceKey: UncleVoHaveAnotherQuest

@@ -8,6 +8,7 @@ public class PlaceItemQuest : MonoSingleton<PlaceItemQuest> {
     public bool isEnd = false;
 
     [Header("Settings")]
+    public CharacterType character;
     public GameObject itemForPlacement;
     public int count;
     public float timeToPlace = 3.0f;
@@ -34,7 +35,7 @@ public class PlaceItemQuest : MonoSingleton<PlaceItemQuest> {
             isComplete = true;
 
         if (!isComplete) {
-            MonologManager.instance.SetText(completePart[completePartInd], "UncleVoPart" + completePartInd.ToString());
+            MonologManager.instance.PlayReplica(character, "Part" + completePartInd.ToString());
             completePartInd++;
             completePartInd = completePartInd == wildMonologs.Length ? 0 : completePartInd;
         }
@@ -44,7 +45,7 @@ public class PlaceItemQuest : MonoSingleton<PlaceItemQuest> {
     }
 
     public void StartQuest() {
-        MonologManager.instance.SetText(startMessage, "UncleVoStartQuest");
+        MonologManager.instance.PlayReplica(character, "StartQuest");
         for (int i = 0; i < count; ++i) {
             Inventory.instance.AddItem(itemForPlacement.name);
         }
@@ -55,11 +56,11 @@ public class PlaceItemQuest : MonoSingleton<PlaceItemQuest> {
 
     public void EndQuest() {
         isEnd = true;
-        MonologManager.instance.SetText(endMessage, "UncleVoEndQuest");
+        MonologManager.instance.PlayReplica(character, "EndQuest");
     }
 
     public void NextMonolog() {
-        MonologManager.instance.SetText(wildMonologs[nextMonologInd], "UncleVoMonolog" + nextMonologInd.ToString());
+        MonologManager.instance.PlayReplica(character, "Monolog" + nextMonologInd.ToString());
         nextMonologInd++;
         nextMonologInd = nextMonologInd == wildMonologs.Length ? 0 : nextMonologInd;
     }

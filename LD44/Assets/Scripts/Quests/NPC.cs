@@ -30,60 +30,45 @@ public class NPC : MonoBehaviour {
         isActive = false;
         InteractSystem.instance.HideText();
 
+        CharacterType character = CharacterType.Player;
+        switch (questType) {
+            case QuestType.Wait:
+                character = CharacterType.Ditto;
+                break;
+            case QuestType.Place:
+                character = CharacterType.UncleVo;
+                break;
+            case QuestType.Collect:
+                character = CharacterType.Vita;
+                break;
+        }
+
         if (QuestManager.instance.currentQuest == QuestType.None) {
             if (QuestType.Wait == questType) {
-                if (PlaceItemQuest.instance.isEnd && CollectItemsQuest.instance.isEnd) {
+                if (PlaceItemQuest.instance.isEnd && CollectItemsQuest.instance.isEnd)
                     QuestManager.instance.StartQuest(questType);
-                }
-                else {
-                    MonologManager.instance.SetText("Uncle Wo and my sister needs you now, check me out when you finish his task.", "DittoUncompleteQuest");
-                }
+                else
+                    MonologManager.instance.PlayReplica(character, "UncompleteQuest");
             }
             else {
                 if (!QuestManager.instance.CheckEnd(questType))
                     QuestManager.instance.StartQuest(questType);
-                else {
-                    switch (questType) {
-                        case QuestType.Place:
-                            MonologManager.instance.SetText("It is done! Run to the twins, some measurements and a couple of details will bring our rocket to life.", "UncleVoAlreadyEndQuest");
-                        break;
-                        case QuestType.Collect:
-                            MonologManager.instance.SetText("I almost printed out all 3 seats, the engine and the hull for the rocket. It'll be ready soon. Help Ditto.", "VitaAlreadyEndQuest");
-                        break;
-                    }
-                }
+                else
+                    MonologManager.instance.PlayReplica(character, "AlreadyEndQuest");
             }
         }
         else {
             if (QuestManager.instance.currentQuest == questType) {
                 if (QuestManager.instance.CheckComplete(questType))
                     QuestManager.instance.EndQuest(questType);
-                else {
-                    switch (questType) {
-                        case QuestType.Wait:
-                            MonologManager.instance.SetText("I believe you can do it. Just go and do it.", "DittoQuestInProgress");
-                            break;
-                        case QuestType.Place:
-                            MonologManager.instance.SetText("I believe you can do it. Just go and do it.", "UncleVoQuestInProgress");
-                            break;
-                        case QuestType.Collect:
-                            MonologManager.instance.SetText("I believe you can do it. Just go and do it.", "VitaQuestInProgress");
-                            break;
-                    }
-                }
+                else
+                    MonologManager.instance.PlayReplica(character, "QuestInProgress");
             }
             else {
-                switch (questType) {
-                    case QuestType.Wait:
-                        MonologManager.instance.SetText("Uncle Wo and my sister needs you now, check me out when you finish his task.", "DittoUncompleteQuest");
-                        break;
-                    case QuestType.Place:
-                        MonologManager.instance.SetText("Come back when other tasks are done.", "UncleVoHaveAnotherQuest");
-                        break;
-                    case QuestType.Collect:
-                        MonologManager.instance.SetText("Come back when other tasks are done.", "VitaHaveAnotherQuest");
-                        break;
-                }
+                if (QuestType.Wait == questType)
+                    MonologManager.instance.PlayReplica(character, "UncompleteQuest");
+                else
+                    MonologManager.instance.PlayReplica(character, "HaveAnotherQuest");
             }
         }
     }
