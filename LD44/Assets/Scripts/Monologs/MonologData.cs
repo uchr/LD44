@@ -6,7 +6,6 @@ using UnityEngine;
 public class Replica {
     public string key;
     public string text;
-    public string voiceKey;
 }
 
 [CreateAssetMenu(fileName = "MonologData", menuName = "SmallRocket/Monolog", order = 1)]

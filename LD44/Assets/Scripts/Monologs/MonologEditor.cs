@@ -24,7 +24,6 @@ public class MonologEditor : Editor {
             GUILayout.BeginVertical();
 
             monologData.replics[i].key = EditorGUILayout.TextField("Key", monologData.replics[i].key);
-            monologData.replics[i].voiceKey = EditorGUILayout.TextField("Voice Key", monologData.replics[i].voiceKey);
             monologData.replics[i].text = EditorGUILayout.TextField("Text", monologData.replics[i].text);
 
             GUILayout.EndVertical();
@@ -58,7 +57,6 @@ public class MonologEditor : Editor {
         if (GUILayout.Button("Add")) {
             Replica newReplica = new Replica();
             newReplica.key = "NewRelica";
-            newReplica.voiceKey = "Key";
             newReplica.text = "Text";
             monologData.replics.Add(newReplica);
         }
