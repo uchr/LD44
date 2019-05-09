@@ -18,6 +18,10 @@ public class MonologManager : MonoSingleton<MonologManager> {
     public GameObject panel;
     public TextMeshProUGUI message;
 
+    public GameObject portraitUncleVo;
+    public GameObject portraitVita;
+    public GameObject portraitDitto;
+
     [Header("Settings")]
     public float lengthFactor = 1.2f;
     public CharacterType replicaCharachter;
@@ -34,16 +38,23 @@ public class MonologManager : MonoSingleton<MonologManager> {
     private Stem.SoundInstance quietNoise = null;
 
     public void PlayReplica(CharacterType character, string key) {
+        portraitUncleVo.SetActive(false);
+        portraitVita.SetActive(false);
+        portraitDitto.SetActive(false);
+
         MonologData data = null;
         switch (character) {
             case CharacterType.Ditto:
                 data = dittoData;
+                portraitDitto.SetActive(true);
                 break;
             case CharacterType.Vita:
                 data = vitaData;
+                portraitVita.SetActive(true);
                 break;
             case CharacterType.UncleVo:
                 data = uncleVoData;
+                portraitUncleVo.SetActive(true);
                 break;
         }
 
