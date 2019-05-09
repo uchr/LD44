@@ -81,7 +81,7 @@ public class PlayerMovement : MonoBehaviour {
 
             case Dir.Backward:
                 if (isWild) {
-                    backward.transform.localPosition = new Vector3(0.741f, 0.903f, -0.082f);
+                    backward.transform.localPosition = new Vector3(0.938f, 1.256f, 0.059f);
                 }
                 else {
                     backward.transform.localPosition = new Vector3(1.06f, 0f, -0.24f);
@@ -93,8 +93,8 @@ public class PlayerMovement : MonoBehaviour {
 
             case Dir.Right:
                 if (isWild) {
-                    side.transform.localPosition = new Vector3(0.796f, 1.3f, 0.435f);
-                    side.transform.localScale = new Vector3(0.34438f, 0.34438f, 0.34438f);
+                    side.transform.localPosition = new Vector3(1.27f, 1.744f, 0.879f);
+                    side.transform.localScale = new Vector3(0.45f, 0.45f, 0.45f);
                 }
                 else {
                     side.transform.localPosition = new Vector3(1.3f, 0, 0.9f);
@@ -108,8 +108,8 @@ public class PlayerMovement : MonoBehaviour {
 
             case Dir.Left:
                 if (isWild) {
-                    side.transform.localPosition = new Vector3(-0.844f, 1.3f, 0.435f);
-                    side.transform.localScale = new Vector3(-0.34438f, 0.34438f, 0.34438f);
+                    side.transform.localPosition = new Vector3(-1.27f, 1.744f, 0.756f);
+                    side.transform.localScale = new Vector3(-0.45f, 0.45f, 0.45f);
                 }
                 else {
                     side.transform.localPosition = new Vector3(-1.3f, 0, 0.9f);
