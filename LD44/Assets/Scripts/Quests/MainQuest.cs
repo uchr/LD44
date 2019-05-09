@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MainQuest : MonoBehaviour {
+    [Header("Debug")]
+    public bool disableStartSound = false;
+
     [Header("State")]
     public bool isEnd = false;
 
@@ -12,8 +15,10 @@ public class MainQuest : MonoBehaviour {
     public GameObject[] npc;
 
     public void Start() {
-        MonologManager.instance.SetText("Wake up. It's started. As agreed: meet in our bunkers.", "DittoStartMainQuest");
-        Stem.MusicManager.Play("Music");
+        if (!disableStartSound) {
+            MonologManager.instance.SetText("Wake up. It's started. As agreed: meet in our bunkers.", "DittoStartMainQuest");
+            Stem.MusicManager.Play("Music");
+        }
     }
 
     private void Update() {

@@ -107,7 +107,7 @@ MonoBehaviour:
       randomizeDelay: 1
       randomVolumeRange: {x: 1, y: 1}
       randomPitchRange: {x: 0.9284649, y: 1.42921}
-      randomDelayRange: {x: 0.23845008, y: 0.3576751}
+      randomDelayRange: {x: 0.30505013, y: 0.42427516}
   buses:
   - name: Master
     muted: 0
