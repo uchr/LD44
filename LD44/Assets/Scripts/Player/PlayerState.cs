@@ -11,8 +11,8 @@ public class PlayerState : MonoSingleton<PlayerState> {
     public float hpDecreaseSpeed = 1.0f;
 
     [Header("State")]
-    public bool inHome = true;
     public bool inTheWild = false;
+    public Character currentBunker;
 
     [Header("UI")]
     public UI.Slider hpBar;

@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+public enum Character {
+    Ditto,
+    Vita,
+    UncleVo,
+    Player
+}
+
 public class Bunker : MonoBehaviour {
-    public bool isHome = false;
+    public Character owner;
 
     private void OnEnable() {
-        PlayerState.instance.inHome = true;
-    }
-
-    private void OnDisable() {
-        if (PlayerState.instance != null)
-            PlayerState.instance.inHome = false;
+        PlayerState.instance.currentBunker = owner;
     }
 }
