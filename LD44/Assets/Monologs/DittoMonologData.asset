@@ -16,41 +16,29 @@ MonoBehaviour:
   replics:
   - key: UncompleteQuest
     text: Uncle Wo and my sister needs you now, check me out when you finish his task.
-    voiceKey: DittoUncompleteQuest
   - key: StartQuest
     text: Did you set up the antennas? Great! Now we need to make measurements.
-    voiceKey: DittoStartQuest
   - key: Monolog0
     text: It's gonna take some time. Try not to think about how small our rocket is.
-    voiceKey: DittoMonolog0
   - key: Monolog1
     text: Calibrate?
-    voiceKey: DittoMonolog1
   - key: Monolog2
     text: Hopefully we will find a new planet without pumpkins and damn farmers ...
       and radioactive elements.
-    voiceKey: DittoMonolog2
   - key: Monolog3
     text: It used to be fun, but now you have to... and will have to... hang these
       antennas forever.
-    voiceKey: DittoMonolog3
   - key: EndQuest
     text: Thank you for helping us, dummy! Have a beautiful time with all the canned
       pumpkins! Bye!
-    voiceKey: DittoEndQuest
   - key: Part0
     text: It should have been a couple degrees to the left. Let's hope we don't have
       to redo it.
-    voiceKey: DittoPart0
   - key: Part1
     text: Can you imagine how we will be there?
-    voiceKey: DittoPart1
   - key: Part2
     text: One more is left and we will be at the goal.
-    voiceKey: DittoPart2
   - key: QuestInProgress
     text: I believe you can do it. Just go and do it.
-    voiceKey: DittoQuestInProgress
   - key: StartMainQuest
     text: 'Wake up. It''s started. As agreed: meet in our bunkers.'
-    voiceKey: DittoStartMainQuest

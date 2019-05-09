@@ -17,44 +17,32 @@ MonoBehaviour:
   - key: StartQuest
     text: My 3D printer is really bad, look for details for it in the neighborhood.
       Let's fix it and can we can print 3 sets of seats for the rocket.
-    voiceKey: VitaStartQuest
   - key: Monolog0
     text: I'm sure one of the parts was stolen by my brother, look in his bunker.
       He's right behind the rocket.
-    voiceKey: VitaMonolog0
   - key: Monolog1
     text: The rest are lying around somewhere. Somewhere near the remains of humanity,
       ha.
-    voiceKey: VitaMonolog1
   - key: Monolog2
     text: I used to love post-apocalypse. Until it was in it, now it is the most boring
       genre in the world.
-    voiceKey: VitaMonolog2
   - key: Monolog3
     text: Imagine! Huge radioactive pumpkin! Nobody will believe if we tell it! Only
       there is nobody to tell
-    voiceKey: VitaMonolog3
   - key: CompleteQuest
     text: This is the last, drag them here.
-    voiceKey: VitaCompleteQuest
   - key: EndQuest
     text: All details? Fire! Now, this old man is going to get back in line and provide
       us with the important things for our little rocket.
-    voiceKey: VitaEndQuest
   - key: Part0
     text: It was the main part for the printer!
-    voiceKey: VitaPart0
   - key: Part1
     text: I'm not sure that this part is necessary for the printer, but I will try
       to insert it.
-    voiceKey: VitaPart1
   - key: AlreadyEndQuest
     text: I almost printed out all 3 seats, the engine and the hull for the rocket.
       It'll be ready soon. Help Ditto.
-    voiceKey: VitaAlreadyEndQuest
   - key: QuestInProgress
     text: I believe you can do it. Just go and do it.
-    voiceKey: VitaQuestInProgress
   - key: HaveAnotherQuest
     text: Come back when other tasks are done.
-    voiceKey: VitaHaveAnotherQuest
