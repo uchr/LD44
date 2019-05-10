@@ -106,8 +106,61 @@ MonoBehaviour:
       randomizePitch: 1
       randomizeDelay: 1
       randomVolumeRange: {x: 1, y: 1}
-      randomPitchRange: {x: 0.9284649, y: 1.42921}
+      randomPitchRange: {x: 1.0337434, y: 1.4467561}
       randomDelayRange: {x: 0.30505013, y: 0.42427516}
+  - name: StepMetal
+    muted: 0
+    soloed: 0
+    unfolded: 1
+    panStereo: 0
+    spatialBlend: 0
+    attenuationMode: 0
+    spread: 0
+    dopplerLevel: 1
+    minDistance: 1
+    maxDistance: 500
+    variationRetriggerMode: 2
+    variations:
+    - clip: {fileID: 8300000, guid: ca68d5eda1057074c86feef0d840dea3, type: 3}
+      fixedVolume: 0.06
+      fixedPitch: 1.5
+      fixedDelay: 0
+      randomizeVolume: 0
+      randomizePitch: 1
+      randomizeDelay: 0
+      randomVolumeRange: {x: 1, y: 1}
+      randomPitchRange: {x: 1.5263927, y: 1.7544962}
+      randomDelayRange: {x: 0, y: 0.26319638}
+    - clip: {fileID: 8300000, guid: 3232f297660c0c34185097e277d52f1c, type: 3}
+      fixedVolume: 0.06
+      fixedPitch: 1.5
+      fixedDelay: 0
+      randomizeVolume: 0
+      randomizePitch: 1
+      randomizeDelay: 0
+      randomVolumeRange: {x: 1, y: 1}
+      randomPitchRange: {x: 1.5263927, y: 1.7018569}
+      randomDelayRange: {x: 0, y: 0}
+    - clip: {fileID: 8300000, guid: 42a37f49631344841a8092504d6e80ae, type: 3}
+      fixedVolume: 0.06
+      fixedPitch: 1.5
+      fixedDelay: 0
+      randomizeVolume: 0
+      randomizePitch: 1
+      randomizeDelay: 0
+      randomVolumeRange: {x: 1, y: 1}
+      randomPitchRange: {x: 1.5614855, y: 1.7369497}
+      randomDelayRange: {x: 0, y: 0}
+    - clip: {fileID: 8300000, guid: f3c1f4a02b0043a46af5a2b11da2cd9c, type: 3}
+      fixedVolume: 0.06
+      fixedPitch: 1.5
+      fixedDelay: 0
+      randomizeVolume: 0
+      randomizePitch: 1
+      randomizeDelay: 0
+      randomVolumeRange: {x: 1, y: 1}
+      randomPitchRange: {x: 1.5439391, y: 1.7018569}
+      randomDelayRange: {x: 0, y: 0}
   buses:
   - name: Master
     muted: 0
@@ -115,6 +168,6 @@ MonoBehaviour:
     mixerGroup: {fileID: 0}
     volume: 1
     polyphony: 1
-    unfolded: 1
+    unfolded: 0
     allowVoiceStealing: 0
-  busIndices: 00000000000000000000000000000000
+  busIndices: 0000000000000000000000000000000000000000

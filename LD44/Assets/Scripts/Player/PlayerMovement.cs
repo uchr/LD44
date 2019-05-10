@@ -65,8 +65,12 @@ public class PlayerMovement : MonoBehaviour {
         else 
             speed = normalSpeed;
 
-        if (dir != Dir.None)
-            Stem.SoundManager.Play("StepGrass");
+        if (dir != Dir.None) {
+            if (isWild)
+                Stem.SoundManager.Play("StepGrass");
+            else 
+                Stem.SoundManager.Play("StepMetal");
+        }
 
         switch (dir) {
             case Dir.None:

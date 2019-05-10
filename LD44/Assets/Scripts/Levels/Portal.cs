@@ -36,6 +36,7 @@ public class Portal : MonoBehaviour {
         var to = portal.GetComponentsInParent<Level>(true);
         to[0].gameObject.SetActive(true);
         to[0].player.transform.position = portal.spawnPoint.position;
+        Stem.SoundManager.Play("Door");
     }
 
 }
