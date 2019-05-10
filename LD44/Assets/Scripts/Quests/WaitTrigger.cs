@@ -7,6 +7,8 @@ public class WaitTrigger : MonoBehaviour {
 
     private float waitTime = 0.0f;
 
+    private Stem.SoundInstance waitSound = null;
+
     private void Enter() {
         isActive = true;
         InteractSystem.instance.SetText("Hold <b>E</b> to scan...");
@@ -23,12 +25,21 @@ public class WaitTrigger : MonoBehaviour {
 
     private void Update() {
         if (isActive && Input.GetKey(KeyCode.E)) {
+            if (waitSound == null) {
+                waitSound = Stem.SoundManager.GrabSound("Scan");
+                waitSound.Play();
+            }
+
             waitTime += Time.deltaTime;
             if (waitTime >= WaitItemQuest.instance.timeToWait) {
                 Action();
             }
         }
         else {
+            if (waitSound != null) {
+                waitSound.Stop();
+                waitSound = null;
+            }
             waitTime = 0.0f;
         }
 
@@ -39,6 +50,9 @@ public class WaitTrigger : MonoBehaviour {
     }
 
     private void Action() {
+        waitSound.Stop();
+        waitSound = null;
+
         isActive = false;
         InteractSystem.instance.HideText();
 
