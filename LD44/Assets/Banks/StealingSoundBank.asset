@@ -19,7 +19,7 @@ MonoBehaviour:
   - name: Door
     muted: 0
     soloed: 0
-    unfolded: 1
+    unfolded: 0
     panStereo: 0
     spatialBlend: 0
     attenuationMode: 0

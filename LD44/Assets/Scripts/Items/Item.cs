@@ -30,6 +30,8 @@ public class Item : MonoBehaviour {
         isActive = false;
         InteractSystem.instance.HideText();
 
+        Stem.SoundManager.Play("TakeItem");
+
         Inventory.instance.AddItem(gameObject.name);
         Destroy(gameObject);
     }
