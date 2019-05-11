@@ -118,11 +118,11 @@ public class MonologManager : MonoSingleton<MonologManager> {
             if (currentRadioMode != radioMode) {
                 currentRadioMode = radioMode;
                 if (currentRadioMode) {
-                    mixer.FindSnapshot("Radio").TransitionTo(0.2f);
+                    mixer.FindSnapshot("Radio").TransitionTo(0.1f);
                     quietNoise.Play();
                 }
                 else {
-                    mixer.FindSnapshot("Bunker").TransitionTo(0.2f);
+                    mixer.FindSnapshot("Bunker").TransitionTo(0.1f);
                     quietNoise.Stop();
                 }
             }

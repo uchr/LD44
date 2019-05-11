@@ -19,7 +19,7 @@ MonoBehaviour:
   - name: StepGrass
     muted: 0
     soloed: 0
-    unfolded: 0
+    unfolded: 1
     panStereo: 0
     spatialBlend: 0
     attenuationMode: 0
@@ -30,7 +30,7 @@ MonoBehaviour:
     variationRetriggerMode: 2
     variations:
     - clip: {fileID: 8300000, guid: d223018191eae4542b7456310f4115bb, type: 3}
-      fixedVolume: 0.06
+      fixedVolume: 0.2
       fixedPitch: 1
       fixedDelay: 0.2
       randomizeVolume: 0
@@ -42,7 +42,7 @@ MonoBehaviour:
   - name: StepMetal
     muted: 0
     soloed: 0
-    unfolded: 0
+    unfolded: 1
     panStereo: 0
     spatialBlend: 0
     attenuationMode: 0
@@ -53,7 +53,7 @@ MonoBehaviour:
     variationRetriggerMode: 2
     variations:
     - clip: {fileID: 8300000, guid: ca68d5eda1057074c86feef0d840dea3, type: 3}
-      fixedVolume: 0.06
+      fixedVolume: 0.15
       fixedPitch: 1.5
       fixedDelay: 0
       randomizeVolume: 0
@@ -63,7 +63,7 @@ MonoBehaviour:
       randomPitchRange: {x: 1.5263927, y: 1.7544962}
       randomDelayRange: {x: 0, y: 0.26319638}
     - clip: {fileID: 8300000, guid: 3232f297660c0c34185097e277d52f1c, type: 3}
-      fixedVolume: 0.06
+      fixedVolume: 0.15
       fixedPitch: 1.5
       fixedDelay: 0
       randomizeVolume: 0
@@ -73,7 +73,7 @@ MonoBehaviour:
       randomPitchRange: {x: 1.5263927, y: 1.7018569}
       randomDelayRange: {x: 0, y: 0}
     - clip: {fileID: 8300000, guid: 42a37f49631344841a8092504d6e80ae, type: 3}
-      fixedVolume: 0.06
+      fixedVolume: 0.15
       fixedPitch: 1.5
       fixedDelay: 0
       randomizeVolume: 0
@@ -83,7 +83,7 @@ MonoBehaviour:
       randomPitchRange: {x: 1.5614855, y: 1.7369497}
       randomDelayRange: {x: 0, y: 0}
     - clip: {fileID: 8300000, guid: f3c1f4a02b0043a46af5a2b11da2cd9c, type: 3}
-      fixedVolume: 0.06
+      fixedVolume: 0.15
       fixedPitch: 1.5
       fixedDelay: 0
       randomizeVolume: 0
