@@ -49,3 +49,5 @@ MonoBehaviour:
     text: I believe you can do it. Just go and do it.
   - key: HaveAnotherQuest
     text: Come back when other tasks are done.
+  - key: StartMainQuest
+    text: "Wake up. It\u2019s started. As agreed, meet in our bunkers."

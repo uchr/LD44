@@ -15,27 +15,27 @@ MonoBehaviour:
   character: 1
   replics:
   - key: StartQuest
-    text: My 3D printer is really bad, look for details for it in the neighborhood.
-      Let's fix it and can we can print 3 sets of seats for the rocket.
+    text: "My 3D printer is really bad. Look for details for it in the area. Let\u2019s
+      fix it and we can print 3 sets of seats for the rocket."
   - key: Monolog0
-    text: I'm sure one of the parts was stolen by my brother, look in his bunker.
-      He's right behind the rocket.
+    text: "One of the parts was stolen by my brother. Look in his bunker; he\u2019s
+      right behind the rocket."
   - key: Monolog1
-    text: The rest are lying around somewhere. Somewhere near the remains of humanity,
-      ha.
+    text: "The rest are lying around somewhere \u2014 somewhere near the remains of
+      humanity. Ha!"
   - key: Monolog2
-    text: I used to love post-apocalypse. Until it was in it, now it is the most boring
-      genre in the world.
+    text: "I used to love post-apocalypse, until I was in it. Now it\u2019s the most
+      boring genre in the world."
   - key: Monolog3
-    text: Imagine! Huge radioactive pumpkin! Nobody will believe if we tell it! Only
-      there is nobody to tell
+    text: "Imagine: a huge radioactive pumpkin! Nobody would believe us if we told
+      them \u2014 only there\u2019s nobody to tell."
   - key: CompleteQuest
     text: This is the last, drag them here.
   - key: EndQuest
     text: All details? Fire! Now, this old man is going to get back in line and provide
       us with the important things for our little rocket.
   - key: Part0
-    text: It was the main part for the printer!
+    text: "That\u2019s the main part for the printer!"
   - key: Part1
     text: I'm not sure that this part is necessary for the printer, but I will try
       to insert it.

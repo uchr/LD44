@@ -22,7 +22,7 @@ public class MainQuest : MonoSingleton<MainQuest> {
 
     private void Start() {
         if (!disableStartSound) {
-            MonologManager.instance.PlayReplica(CharacterType.Ditto, "StartMainQuest");
+            MonologManager.instance.PlayReplica(CharacterType.UncleVo, "StartMainQuest");
             Stem.MusicManager.Play("Music");
         }
     }

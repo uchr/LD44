@@ -19,7 +19,7 @@ MonoBehaviour:
     tracks:
     - clip: {fileID: 8300000, guid: 7ae00e009229c8b40b64aa7651c40cbd, type: 3}
       volume: 0.012
-    unfolded: 1
+    unfolded: 0
   players:
   - name: Music
     mixerGroup: {fileID: 0}
@@ -30,5 +30,5 @@ MonoBehaviour:
     volume: 1
     muted: 0
     soloed: 0
-    unfolded: 1
+    unfolded: 0
   playlistIndices: 00000000
