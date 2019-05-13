@@ -30,7 +30,7 @@ MonoBehaviour:
     variationRetriggerMode: 2
     variations:
     - clip: {fileID: 8300000, guid: d223018191eae4542b7456310f4115bb, type: 3}
-      fixedVolume: 0.2
+      fixedVolume: 0.3
       fixedPitch: 1
       fixedDelay: 0.2
       randomizeVolume: 0
