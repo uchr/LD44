@@ -2,11 +2,17 @@
     Properties {
         [PerRendererData]_MainTex ("Sprite Texture", 2D) = "white" {}
         _Color ("Color", Color) = (1,1,1,1)
-        _NosiyTex ("Sprite Texture", 2D) = "white" {}
         _Cutoff("Shadow alpha cutoff", Range(0,1)) = 0.5
+
+        _WaveTex ("Wave Texture", 2D) = "white" {}
+        _HeightTexture ("Height Texture", 2D) = "white" {}
+        _WaveScale("Wave Scale", float) = 1.0
+        _WindSpeed("Wind Speed", float) = 1.0
+        _WindAmp("Wind Amp", float) = 1.0
+        _RndFactor("Rnd Factor", float) = 1.0
+        _DebugCoef("DebugCoef", float) = 1.0
     }
     SubShader {
-        Lighting Off
         Tags 
         { 
             "Queue"="Geometry"
@@ -14,36 +20,43 @@
         }
         LOD 200
 
+        Lighting Off
         Cull Off
 
         CGPROGRAM
         #pragma surface surf Lambert addshadow fullforwardshadows vertex:vert
 
-        // Use shader model 3.0 target, to get nicer looking lighting
-        #pragma target 3.0
-
         sampler2D _MainTex;
-        sampler2D _NosiyTex;
         fixed4 _Color;
         fixed _Cutoff;
+
+        sampler2D _WaveTex;
+        sampler2D _HeightTexture;
+        float _WaveScale;
+        float _WindSpeed;
+        float _WindAmp;
+        float _RndFactor;
+        float _DebugCoef;
 
         struct Input
         {
             float2 uv_MainTex;
             float3 worldPos;
+            float3 scaledPos;
         };
 
-        void vert(inout appdata_full v)
+        void vert(inout appdata_full v, out Input o)
         {
-            float3 w = mul(unity_ObjectToWorld, v.vertex).xyz;
-            float4 c = tex2Dlod(_NosiyTex, float4(0.02  * w.x, 0.02 * w.z, 0, 1));
-            float s = sin(20 * ( (c.x + c.y) + _Time));
-            v.vertex.x += 0.1 * s * clamp(v.vertex.y, 0, 1);
+            UNITY_INITIALIZE_OUTPUT(Input, o);
+            float4 pos = mul(unity_ObjectToWorld, v.vertex);
+            o.scaledPos = pos / _WaveScale;
+            float rnd = tex2Dlod(_WaveTex, float4(o.scaledPos.x, o.scaledPos.z, 0, 0)) - 0.5;
+            float heightFactor = tex2Dlod(_HeightTexture, v.texcoord);
+            v.vertex.x += _WindAmp * sin(_RndFactor * rnd + _WindSpeed * _Time.y) * heightFactor;
         }
 
         void surf (Input IN, inout SurfaceOutput o) {
-            //float4 c = tex2Dlod(_NosiyTex, float4(0.02  * IN.worldPos.x, 0.02 * IN.worldPos.z, 0, 1));
-            fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
+            fixed4 c = (tex2D (_MainTex, IN.uv_MainTex) * _Color) * _DebugCoef + tex2D(_WaveTex, float4(IN.scaledPos.xz, 0, 1)) * (1 - _DebugCoef);
             o.Emission = c.rgb;
             o.Alpha = c.a;
             clip(o.Alpha - _Cutoff);
