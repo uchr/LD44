@@ -68,8 +68,12 @@ public class CollectItemsQuest : MonoSingleton<CollectItemsQuest> {
     }
 
     public void NextMonolog() {
-        MonologManager.instance.PlayReplica(character, "Monolog" + nextMonologInd.ToString());
-        nextMonologInd++;
-        nextMonologInd = nextMonologInd == wildMonologsCount ? 0 : nextMonologInd;
+        if (!isComplete) {
+            MonologManager.instance.PlayReplica(character, "Monolog" + nextMonologInd.ToString());
+            nextMonologInd++;
+            nextMonologInd = nextMonologInd == wildMonologsCount ? 0 : nextMonologInd;
+        }
+        else
+            MonologManager.instance.PlayReplica(character, "CompleteQuest");
     }
 }
