@@ -11,7 +11,7 @@ public class WaitItemQuest : MonoSingleton<WaitItemQuest> {
     public CharacterType character;
     public int count = 2;
     public float timeToWait = 3.0f;
-    public GameObject[] placesToWait;
+    public Radar[] radars;
 
     [Header("Dialogs")]
     public int wildMonologsCount;
@@ -19,11 +19,6 @@ public class WaitItemQuest : MonoSingleton<WaitItemQuest> {
 
     private int nextMonologInd = 0;
     private int completePartInd = 0;
-
-    private void Awake() {
-        foreach (var go in placesToWait)
-            go.SetActive(false);
-    }
 
     public void Scan() {
         count--;
@@ -43,8 +38,8 @@ public class WaitItemQuest : MonoSingleton<WaitItemQuest> {
     public void StartQuest() {
         MonologManager.instance.PlayReplica(character, "StartQuest");
 
-        foreach (var go in placesToWait)
-            go.SetActive(true);
+        foreach (var radar in radars)
+            radar.WaitStart();
     }
 
     public void EndQuest() {

@@ -55,6 +55,7 @@ public class WaitTrigger : MonoBehaviour {
 
         isActive = false;
         InteractSystem.instance.HideText();
+        GetComponentInParent<Radar>().WaitEnd();
 
         WaitItemQuest.instance.Scan();
         Destroy(gameObject);

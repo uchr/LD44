@@ -9,10 +9,10 @@ public class PlaceItemQuest : MonoSingleton<PlaceItemQuest> {
 
     [Header("Settings")]
     public CharacterType character;
-    public GameObject itemForPlacement;
+    public string radarName = "Disk";
     public int count;
     public float timeToPlace = 3.0f;
-    public GameObject[] placesToPlace;
+    public Radar[] radars;
 
     [Header("Dialogs")]
     public int wildMonologsCount;
@@ -21,14 +21,9 @@ public class PlaceItemQuest : MonoSingleton<PlaceItemQuest> {
     private int nextMonologInd = 0;
     private int completePartInd = 0;
 
-    private void Awake() {
-        foreach (var go in placesToPlace)
-            go.SetActive(false);
-    }
-
     public void PlaceItem() {
         count--;
-        Inventory.instance.RemoveItem(itemForPlacement.name);
+        Inventory.instance.RemoveItem(radarName);
         if (count <= 0)
             isComplete = true;
 
@@ -45,11 +40,11 @@ public class PlaceItemQuest : MonoSingleton<PlaceItemQuest> {
     public void StartQuest() {
         MonologManager.instance.PlayReplica(character, "StartQuest");
         for (int i = 0; i < count; ++i) {
-            Inventory.instance.AddItem(itemForPlacement.name);
+            Inventory.instance.AddItem(radarName);
         }
 
-        foreach (var go in placesToPlace)
-            go.SetActive(true);
+        foreach (var radar in radars) 
+            radar.PlaceStart();
     }
 
     public void EndQuest() {

@@ -56,8 +56,9 @@ public class PlaceItemTrigger : MonoBehaviour {
         isActive = false;
         InteractSystem.instance.HideText();
 
+        GetComponentInParent<Radar>().PlaceEnd();
+
         PlaceItemQuest.instance.PlaceItem();
-        GameObject.Instantiate(PlaceItemQuest.instance.itemForPlacement, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }
