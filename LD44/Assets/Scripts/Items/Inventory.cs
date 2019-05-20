@@ -16,7 +16,6 @@ public class Inventory : MonoSingleton<Inventory> {
     public RemoveItemEvent removeItem = new RemoveItemEvent();
 
     [Header("UI")]
-    public TextMeshProUGUI listOfItems;
     public GameObject detail0;
     public GameObject detail1;
     public GameObject detail2;
@@ -42,11 +41,6 @@ public class Inventory : MonoSingleton<Inventory> {
         }
 
         addItem.Invoke(itemName, items[itemName]);
-
-        listOfItems.text = "<b>ITEMS<b>\n";
-        foreach (var item in items) {
-            listOfItems.text += "<b>" + item.Key + ":</b> " + item.Value.ToString() + "\n";
-        }
     }
 
     public int Contains(string itemName) {
@@ -80,11 +74,6 @@ public class Inventory : MonoSingleton<Inventory> {
         if (items[itemName] <= 0)
             items.Remove(itemName);
 
-        listOfItems.text = "<b>ITEMS<b>\n";
-        foreach (var item in items) {
-            listOfItems.text += "<b>" + item.Key + ":</b> " + item.Value.ToString() + "\n";
-        }
-        
         removeItem.Invoke(itemName, count);
     }
 }
